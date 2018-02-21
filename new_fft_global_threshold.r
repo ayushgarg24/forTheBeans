@@ -9,7 +9,11 @@ numeric_data_ts <- as.numeric(data_ts)
 
 #Compute FFT
 x <- fft(numeric_data_ts)
-plot(x)
+x_abs <- Mod(x)
+x_norm <- x_abs/(length(x_abs)/2)
+x_decNorm <- sapply(x_norm, function(x) 10*log10(x))
+plot(x_decNorm, type = "l")
+
 
 #Transform FFT to freq by decibels domain (Needs to Be Done)
 freq_by_db_fft <- matrix(c(1,3,4,6,7,8,10,12),4,2)
@@ -36,6 +40,7 @@ remove_quiet <- function(fft_freq) {
   }
   return(fft_freq)
 }
+
 
 #Store Final Dataframe with Global Threshold Calculated
 final_dataframe <- remove_quiet(freq_by_db_fft)
