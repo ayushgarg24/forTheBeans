@@ -25,7 +25,7 @@ get_threshold_in_quiet <- function(f){
 
 #Remove Rows of Two Dimensional Dataframe Under Curve
 remove_quiet <- function(fft_freq) {
-  fft_freq2 <- matrix(c(10000,3,4,6,7,8,10,100),4,2)
+  
   #Loop through each row of the Transform FFT
   for (i in 1:dim(fft_freq)[1]){
     #Call Threshold in Quiet Function
