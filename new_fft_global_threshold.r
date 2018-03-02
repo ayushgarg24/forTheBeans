@@ -1,4 +1,6 @@
 library(tuneR)
+library(signal)
+library(audio)
 # Read in File
 file <- readWave(file.choose())
 
@@ -18,9 +20,8 @@ plot(x_decNorm, type = "l")
 
 #Calculate Threshold in Quiet Curve
 get_threshold_in_quiet <- function(f){
-  #threshold_equation <- eval((3.64*(f/1000)^(-0.8))-6.5*exp(-0.6((f/1000)-3.3)^2)+((10^-3)*(f/1000)^4))
-  val <- 4
-  threshold_equation <- eval((f^2))
+  threshold_equation <- eval((3.64*(f/1000)^(-0.8)) -6.5*exp(-0.6*((f/1000)-3.3)^2)+((10^-3)*(f/1000)^4))
+  #threshold_equation <- eval((f^2))
   #Plot Threshold Equation
   plot(threshold_equation)
   return(threshold_equation)
@@ -29,20 +30,15 @@ get_threshold_in_quiet <- function(f){
 #Remove Rows of Two Dimensional Dataframe Under Curve
 remove_quiet <- function(fft_freq) {
   
-  #Indexer for the Threshold
-  index_list <- 1
- 
   #Loop through each row of the Transform FFT
-  for (i in 1:length(fft_freq)){
+  #for (i in 1:length(fft_freq)){
+  for (i in 1:500){
     #Call Threshold in Quiet Function
-    if (fft_freq[index_list] < get_threshold_in_quiet(index_list)){
-      print (index_list)
-      fft_freq <- fft_freq[-index_list]
+    if (fft_freq[i] < get_threshold_in_quiet(i)){
+      print (i)
+      #fft_freq <- fft_freq[-i]
       #If to convert to 0 instead of deleting
-      #fft_freq[index_list] <- 0
-    }
-    else{
-      index_list <- index_list+1
+      fft_freq[i] <- 0
     }
   }
   return(fft_freq)
@@ -50,3 +46,20 @@ remove_quiet <- function(fft_freq) {
 
 #Store Final Dataframe with Global Threshold Calculated
 final_dataframe <- remove_quiet(x_decNorm)
+
+doInverse <- function(output_dataframe) {
+  x_inv_decNorm <- sapply(output_dataframe, function(x) 10^(x/10))
+  x_inv_norm <- x_inv_decNorm*(length(x_abs)/2)
+  #Do Inverse FFT, Convert Back to Integer Time Series
+  inv_fft <- ifft(x_inv_norm)
+  inv_data_ts <- ts(inv_fft, frequency = 44100)
+  plot(inv_data_ts)
+  int_inv_data_ts <- as.integer(inv_data_ts)
+  plot(int_inv_data_ts)
+  play(int_inv_data_ts)
+  
+  return(int_inv_data_ts)
+  
+}
+
+final_byte_data <- doInverse(final_dataframe)
