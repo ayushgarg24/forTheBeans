@@ -11,6 +11,8 @@ numeric_data_ts <- as.numeric(data_ts)
 
 #Compute FFT
 x <- fft(numeric_data_ts)
+x_orig <- sapply(x, function(x) as.integer(x))
+x_orig <- sapply(x_orig, function(x) x/abs(x))
 x_abs <- Mod(x)
 x_norm <- x_abs/(length(x_abs)/2)
 
@@ -27,6 +29,8 @@ get_threshold_in_quiet <- function(f){
   return(threshold_equation)
 }
 
+
+
 #Remove Rows of Two Dimensional Dataframe Under Curve
 remove_quiet <- function(fft_freq) {
   
@@ -41,7 +45,13 @@ remove_quiet <- function(fft_freq) {
       fft_freq[i] <- 0
     }
   }
+  plot(fft_freq)
   return(fft_freq)
+}
+index <- 0
+re_neg <- function(q) {
+  index <- index + 1
+  return (q*x_orig[index])
 }
 
 #Store Final Dataframe with Global Threshold Calculated
@@ -51,6 +61,7 @@ doInverse <- function(output_dataframe) {
   x_inv_decNorm <- sapply(output_dataframe, function(x) 10^(x/10))
   x_inv_norm <- x_inv_decNorm*(length(x_abs)/2)
   #Do Inverse FFT, Convert Back to Integer Time Series
+  x_inv_norm <- sapply(x_inv_norm, function(x) re_neg(x))
   inv_fft <- ifft(x_inv_norm)
   inv_data_ts <- ts(inv_fft, frequency = 44100)
   plot(inv_data_ts)
