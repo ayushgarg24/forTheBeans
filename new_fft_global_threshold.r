@@ -29,10 +29,8 @@ get_threshold_in_quiet <- function(f){
   return(threshold_equation)
 }
 
-
-
 #Remove Rows of Two Dimensional Dataframe Under Curve
-remove_quiet <- function(fft_freq) {
+remove_quiet <- function(fft_freq, x) {
   
   #Loop through each row of the Transform FFT
   #for (i in 1:length(fft_freq)){
@@ -42,27 +40,17 @@ remove_quiet <- function(fft_freq) {
       print (i)
       #fft_freq <- fft_freq[-i]
       #If to convert to 0 instead of deleting
-      fft_freq[i] <- 0
+      x[i] <- 0
     }
   }
-  plot(fft_freq)
-  return(fft_freq)
-}
-index <- 0
-re_neg <- function(q) {
-  index <- index + 1
-  return (q*x_orig[index])
+  return(x)
 }
 
 #Store Final Dataframe with Global Threshold Calculated
-final_dataframe <- remove_quiet(x_decNorm)
+final_dataframe <- remove_quiet(x_decNorm, x)
 
 doInverse <- function(output_dataframe) {
-  x_inv_decNorm <- sapply(output_dataframe, function(x) 10^(x/10))
-  x_inv_norm <- x_inv_decNorm*(length(x_abs)/2)
-  #Do Inverse FFT, Convert Back to Integer Time Series
-  x_inv_norm <- sapply(x_inv_norm, function(x) re_neg(x))
-  inv_fft <- ifft(x_inv_norm)
+  inv_fft <- ifft(output_dataframe)
   inv_data_ts <- ts(inv_fft, frequency = 44100)
   plot(inv_data_ts)
   int_inv_data_ts <- as.integer(inv_data_ts)
