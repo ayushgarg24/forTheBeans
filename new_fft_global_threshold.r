@@ -25,29 +25,24 @@ get_threshold_in_quiet <- function(f){
   threshold_equation <- eval((3.64*(f/1000)^(-0.8)) -6.5*exp(-0.6*((f/1000)-3.3)^2)+((10^-3)*(f/1000)^4))
   #threshold_equation <- eval((f^2))
   #Plot Threshold Equation
-  plot(threshold_equation)
+  #plot(threshold_equation)
   return(threshold_equation)
 }
 
-#Remove Rows of Two Dimensional Dataframe Under Curve
-remove_quiet <- function(fft_freq, x) {
-  
-  #Loop through each row of the Transform FFT
-  #for (i in 1:length(fft_freq)){
-  for (i in 1:500){
-    #Call Threshold in Quiet Function
-    if (fft_freq[i] < get_threshold_in_quiet(i)){
-      print (i)
-      #fft_freq <- fft_freq[-i]
-      #If to convert to 0 instead of deleting
-      x[i] <- 0
-    }
+index <- 0
+thresholding <- function(val, original_matrix) {
+  index <<- index + 1
+  if (val < get_threshold_in_quiet(index)){
+    #print (index)
+    #fft_freq <- fft_freq[-i]
+    #If to convert to 0 instead of deleting
+    #x <- 0
+    return(0)
   }
-  return(x)
+  return(x[index])
 }
 
-#Store Final Dataframe with Global Threshold Calculated
-final_dataframe <- remove_quiet(x_decNorm, x)
+final_dataframe <- mapply(thresholding, x_decNorm, x)
 
 doInverse <- function(output_dataframe) {
   inv_fft <- ifft(output_dataframe)
