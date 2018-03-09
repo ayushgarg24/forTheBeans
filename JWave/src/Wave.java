@@ -1,3 +1,5 @@
+import jwave.Transform;
+import jwave.transforms.FastWaveletTransform;
 import org.apache.commons.vfs2.util.FileObjectUtils;
 
 import javax.sound.sampled.*;
@@ -18,6 +20,11 @@ public class Wave {
     protected AudioFormat fileAudioFormat;
 
     protected File file;
+    protected int tLevel;
+
+    protected int wavelet;
+
+    protected int ogLength;
 
     public Wave(String path) throws IOException, UnsupportedAudioFileException {
         file = new File(path);
@@ -57,9 +64,22 @@ public class Wave {
 
         int shift = result[0];
 
-        byte[] r = new byte[result.length - 1];
-        for (int i = 1; i < result.length; i++) {
-            r[i - 1] = result[i];
+        float sampleRate = (float) ((result[1] & 0xff) | ((result[2] << 8) & 0x0000FF00) | ((result[3] << 16) & 0x00ff0000) | ((result[4] << 24) & 0xff000000));
+        int sampleSizeInBits = result[5];
+        int channels = result[6];
+        boolean signed = result[7] == 1;
+        boolean bigEndian = result[8] == 1;
+        fileAudioFormat = new AudioFormat(sampleRate, sampleSizeInBits, channels, signed, bigEndian);
+
+        tLevel = result[9];
+
+        wavelet = result[10];
+
+        ogLength = ((result[11] & 0xff) | ((result[12] << 8) & 0x0000FF00) | ((result[13] << 16) & 0x00ff0000) | ((result[14] << 24) & 0xff000000));
+
+        byte[] r = new byte[result.length - 15];
+        for (int i = 15; i < result.length; i++) {
+            r[i - 15] = result[i];
         }
 
         double[] doubles = new double[r.length/4];
@@ -199,7 +219,40 @@ public class Wave {
         ZipOutputStream zos = new ZipOutputStream(new BufferedOutputStream(os));
         zos.setMethod(ZipOutputStream.DEFLATED);
 
-        byte[] header = {(byte)toShiftedInts(waveAsDoubles)};
+        byte[] header = new byte[15];
+
+        header[0] = (byte)toShiftedInts(waveAsDoubles);
+
+        header[1] = (byte) (((int)fileAudioFormat.getSampleRate()) & 0xff);
+        header[2] = (byte) ((((int)fileAudioFormat.getSampleRate()) >> 8) & 0xff);
+        header[3] = (byte) ((((int)fileAudioFormat.getSampleRate()) >> 16) & 0xff);
+        header[4] = (byte) ((((int)fileAudioFormat.getSampleRate()) >> 24) & 0xff);
+
+        header[5] = (byte) fileAudioFormat.getSampleSizeInBits();
+
+        header[6] = (byte) fileAudioFormat.getChannels();
+
+        if (fileAudioFormat.getEncoding().toString().equals("PCM_SIGNED")) {
+            header[7] = 1;
+        }
+        else {
+            header[7] = 0;
+        }
+        if (fileAudioFormat.isBigEndian()) {
+            header[8] = 1;
+        }
+        else {
+            header[8] = 0;
+        }
+
+        header[9] = (byte) tLevel;
+
+        header[10] = (byte) wavelet;
+
+        header[1] = (byte) ((ogLength) & 0xff);
+        header[12] = (byte) (((ogLength) >> 8) & 0xff);
+        header[13] = (byte) (((ogLength) >> 16) & 0xff);
+        header[14] = (byte) (((ogLength) >> 24) & 0xff);
 
         byte[] bytes = new byte[shiftedInts.length*4];
 
@@ -341,5 +394,13 @@ public class Wave {
         fileAudioFormat = format;
 
         waveAsBytes = newBytes;
+    }
+
+    public void decompress() {
+        Transform t = new Transform(new FastWaveletTransform(Operators.getWaveletFromIndex(wavelet)));
+
+        waveAsDoubles = Operators.getDoubleArrayTruncated(t.reverse(Operators.getDoubleArrayOfCorrectLength(waveAsDoubles), tLevel), ogLength);
+
+        waveAsBytes = toBytesFromDoubles(waveAsDoubles);
     }
 }

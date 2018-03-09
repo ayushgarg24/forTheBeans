@@ -16,11 +16,13 @@ import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) throws IOException, UnsupportedAudioFileException {
-        String path = "src/files/inputs/sa.wav";
+        String path = "src/files/inputs/first20.wav";
 
         Wave wave = new Wave(path);
 
-        Transform set = new Transform(new FastWaveletTransform(new Daubechies20()));
+        wave.wavelet = 39;
+
+        Transform set = new Transform(new FastWaveletTransform(Operators.getWaveletFromIndex(wave.wavelet)));
 
         /*double[] rightLength = Operators.getDoubleArrayOfCorrectLength(wave.waveAsDoubles);
         double[] coefs = set.forward(rightLength, 11);
@@ -129,8 +131,10 @@ public class Main {
             rans[i] = (int)(Math.random()*100);
         }*/
         double[] rans = wave.waveAsDoubles;
+        wave.ogLength = wave.waveAsDoubles.length;
         double[] rightLength = Operators.getDoubleArrayOfCorrectLength(rans);
-        double[] ranResult = set.forward(rightLength, 25);
+        wave.tLevel = (int) Math.log((double)rightLength.length);
+        double[] ranResult = set.forward(rightLength, wave.tLevel);
         int count = 0;
         System.out.println(wave.waveAsDoubles.length);
         System.out.println(ranResult.length);
@@ -149,15 +153,20 @@ public class Main {
             }
         }
         System.out.println(count - (rightLength.length - wave.waveAsDoubles.length));
-        Wave ranWave = new Wave(Operators.getDoubleArrayTruncated(ranResult, rans), wave);
+        Wave ranWave = new Wave(Operators.getDoubleArrayTruncated(ranResult, wave.ogLength), wave);
+        ranWave.fileAudioFormat = wave.fileAudioFormat;
+        ranWave.tLevel = wave.tLevel;
+        ranWave.wavelet = wave.wavelet;
+        ranWave.ogLength = wave.ogLength;
         ranWave.toZipFile("src/files/outputs/ran.zip");
         wave.toZipFile("src/files/outputs/wave.zip");
 
         File f = new File("src/files/outputs/ran.zip");
         Wave ranIn = new Wave(f);
-        ranIn.fileAudioFormat = wave.fileAudioFormat;
 
-        ranIn.waveAsDoubles = Operators.getDoubleArrayTruncated(set.reverse(Operators.getDoubleArrayOfCorrectLength(ranIn.waveAsDoubles), 25), rans);
+        Transform set2 = new Transform(new FastWaveletTransform(Operators.getWaveletFromIndex(ranIn.wavelet)));
+
+        ranIn.waveAsDoubles = Operators.getDoubleArrayTruncated(set2.reverse(Operators.getDoubleArrayOfCorrectLength(ranIn.waveAsDoubles), ranIn.tLevel), rans.length);
 
         ranIn.waveAsBytes = ranIn.toBytesFromDoubles(ranIn.waveAsDoubles);
 
@@ -165,19 +174,12 @@ public class Main {
 
         wave.downSample();
 
-        R8B lib = R8B.INSTANCE;
-        lib.;
-
-        System.loadLibrary("src/files/r8brain-free-src-1.6-dll/r8bsrc.dll");
-        
-
-
         wave.toSimpleZip("src/files/outputs/waveDown.zip");
 
         System.out.println("Playing!");
         try {
-            //ranIn.playWave();
-            wave.playWave();
+            ranIn.playWave();
+            //wave.playWave();
         } catch (LineUnavailableException e) {
             e.printStackTrace();
         }
