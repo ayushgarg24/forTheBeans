@@ -187,7 +187,7 @@ public class HaarTransform {
     }
 
 
-    //very self-explanatory
+    //one type of array to another
     private double[] copyToDoubleArray(
             int[] a)
     {
