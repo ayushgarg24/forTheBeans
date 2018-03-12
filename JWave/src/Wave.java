@@ -4,6 +4,8 @@ import jwave.transforms.FastWaveletTransform;
 
 import javax.sound.sampled.*;
 import java.io.*;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.concurrent.CountDownLatch;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
@@ -18,6 +20,7 @@ import java.util.zip.ZipOutputStream;
  * Playback control utility for the frontend, either by direct access methods, or by returning the clip object for manipulation by another object.
  */
 public class Wave {
+    //<editor-fold desc="Wave Object Global Variables">
     protected double[] waveAsDoubles;
     protected short[] waveAsShorts;
     protected byte[] waveAsBytes;
@@ -28,11 +31,13 @@ public class Wave {
     protected AudioFormat fileAudioFormat;
 
     protected File file;
+    protected URL waveURL;
     protected int tLevel;
 
     protected int wavelet;
 
     protected int ogLength;
+    //</editor-fold>
 
     /**
      * Wave object constructor that takes a String path, loading a corresponding java.io.File and loading audio format info using AudioSystem.
@@ -46,14 +51,14 @@ public class Wave {
      * @throws IOException
      * @throws UnsupportedAudioFileException
      */
-    public Wave(String path) throws IOException, UnsupportedAudioFileException {
+    /*public Wave(String path) throws IOException, UnsupportedAudioFileException {
         file = new File(path);
 
         fileFormat = AudioSystem.getAudioFileFormat(file);
         fileType = fileFormat.getType();
         fileAudioFormat = fileFormat.getFormat();
         waveAsDoubles = readWaveAsDoubles(file);
-    }
+    }*/
 
     /**
      * Alternate Wave object constructor that takes a Double array and a previous Wave object, populating array based on the given Double array.
@@ -147,8 +152,95 @@ public class Wave {
         waveAsBytes = toBytesFromDoubles(doubles);
     }
 
-    public double[] readWaveAsDoubles(File f) throws IOException, UnsupportedAudioFileException {
-        short[] shorts = readWaveAsShorts(f);
+    public Wave(String path) throws IOException, UnsupportedAudioFileException {
+        URL url = null;
+        if (path.contains("zip")) {     //Determine if given path points to a compressed or uncompressed file, and load Wave.
+            //<editor-fold desc="Read Wave from compressed ZIP.">
+            if (path.contains("http")) {    //Determine if given path is a url, and load Wave.
+                url = new URL(path);
+            } else {
+                url = new File(path).toURI().toURL();
+            }
+            //FileInputStream fis = new FileInputStream();
+            InputStream in = url.openStream();
+            ZipInputStream zis = new ZipInputStream(new BufferedInputStream(in));
+
+            ByteArrayOutputStream out = new ByteArrayOutputStream();
+
+            int read;
+            byte[] buff = new byte[1024];
+            while (zis.getNextEntry() != null) {
+                while ((read = zis.read(buff)) > 0) {
+                    out.write(buff, 0, read);
+                }
+            }
+            out.flush();
+
+            byte[] result = out.toByteArray();
+
+            int shift = result[0];
+
+            float sampleRate = (float) ((result[1] & 0xff) | ((result[2] << 8) & 0x0000FF00) | ((result[3] << 16) & 0x00ff0000) | ((result[4] << 24) & 0xff000000));
+            int sampleSizeInBits = result[5];
+            int channels = result[6];
+            boolean signed = result[7] == 1;
+            boolean bigEndian = result[8] == 1;
+            fileAudioFormat = new AudioFormat(sampleRate, sampleSizeInBits, channels, signed, bigEndian);
+
+            tLevel = result[9];
+
+            wavelet = result[10];
+
+            ogLength = ((result[11] & 0xff) | ((result[12] << 8) & 0x0000FF00) | ((result[13] << 16) & 0x00ff0000) | ((result[14] << 24) & 0xff000000));
+
+            byte[] r = new byte[result.length - 15];
+            for (int i = 15; i < result.length; i++) {
+                r[i - 15] = result[i];
+            }
+
+            double[] doubles = new double[r.length/4];
+
+            for (int i = 0; i < doubles.length; i++) {
+                byte byteA = r[((i+1)*4)-4];
+                byte byteB = r[((i+1)*4)-3];
+                byte byteC = r[((i+1)*4)-2];
+                byte byteD = r[((i+1)*4)-1];
+                int intA = byteA & 0xff;
+                int intB = (byteB << 8) & 0x0000FF00;
+                int intC = (byteC << 16) & 0x00ff0000;
+                int intD = (byteD << 24) & 0xff000000;
+                if (shift == 0) {
+                    doubles[i] = (double) (intA | intB | intC | intD);
+                }
+                else {
+                    doubles[i] = ((double) (intA | intB | intC | intD)) / (Math.pow(10, shift-1));
+                }
+            }
+
+            waveAsDoubles = doubles;
+
+            waveAsBytes = toBytesFromDoubles(doubles);
+            //</editor-fold>
+        }
+        else {      //Path points to an uncompressed audio file, load Wave.
+            //<editor-fold desc="Read Wave from .wav file.">
+            if (path.contains("http")) {    //Determine if given path is a url, and load Wave.
+                url = new URL(path);
+            } else {
+                url = new File(path).toURI().toURL();
+            }
+
+            fileFormat = AudioSystem.getAudioFileFormat(url);
+            fileType = fileFormat.getType();
+            fileAudioFormat = fileFormat.getFormat();
+            waveAsDoubles = readWaveAsDoubles(url);
+            //</editor-fold>
+        }
+        waveURL = url;
+    }
+
+    public double[] readWaveAsDoubles(URL u) throws IOException, UnsupportedAudioFileException {
+        short[] shorts = readWaveAsShorts(u);
 
         double[] result = new double[shorts.length];
         for (int i = 0; i < result.length; i++) {
@@ -158,9 +250,9 @@ public class Wave {
         return result;
     }
 
-    public byte[] readWaveAsBytes(File f) throws IOException, UnsupportedAudioFileException {
+    public byte[] readWaveAsBytes(URL u) throws IOException, UnsupportedAudioFileException {
         ByteArrayOutputStream out = new ByteArrayOutputStream();
-        InputStream in = AudioSystem.getAudioInputStream(f);
+        InputStream in = AudioSystem.getAudioInputStream(u);
 
         int read;
         byte[] buff = new byte[1024];
@@ -176,8 +268,8 @@ public class Wave {
         return result;
     }
 
-    public short[] readWaveAsShorts(File f) throws IOException, UnsupportedAudioFileException {
-        byte[] bytes = readWaveAsBytes(f);
+    public short[] readWaveAsShorts(URL u) throws IOException, UnsupportedAudioFileException {
+        byte[] bytes = readWaveAsBytes(u);
 
         short[] shorts = new short[bytes.length/2];
 
