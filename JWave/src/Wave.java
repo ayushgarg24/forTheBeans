@@ -1,14 +1,22 @@
+import files.InvalidParamException;
 import jwave.Transform;
 import jwave.transforms.FastWaveletTransform;
-import org.apache.commons.vfs2.util.FileObjectUtils;
 
 import javax.sound.sampled.*;
-import javax.swing.*;
 import java.io.*;
+import java.util.concurrent.CountDownLatch;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
 import java.util.zip.ZipOutputStream;
 
+/**
+ * Wave object class, used for the storing and manipulation of audio files, including the reading, writing, and compression of such files.
+ *
+ * To-Do: Add support for streaming audio in playback and compression. The ability of the servlet to chuck and audio file and compress it, and the ability to dynamically build
+ * a Wave object as data arrives and playback from a buffer rather than a fixed array.
+ *
+ * Playback control utility for the frontend, either by direct access methods, or by returning the clip object for manipulation by another object.
+ */
 public class Wave {
     protected double[] waveAsDoubles;
     protected short[] waveAsShorts;
@@ -26,6 +34,18 @@ public class Wave {
 
     protected int ogLength;
 
+    /**
+     * Wave object constructor that takes a String path, loading a corresponding java.io.File and loading audio format info using AudioSystem.
+     * The waveAsDoubles array is then populated by the readWaveAsDoubles method with the File object as a parameter.
+     *
+     * To-Do: Update constructor to receive String/URL, and load file local or over http, as well as determine if ZIP or WAV format. Combine.
+     *
+     * @date 3.11.2018 21:48:00
+     * @author Alex Radovan (alexradocole@gmail.com)
+     * @param path
+     * @throws IOException
+     * @throws UnsupportedAudioFileException
+     */
     public Wave(String path) throws IOException, UnsupportedAudioFileException {
         file = new File(path);
 
@@ -35,6 +55,15 @@ public class Wave {
         waveAsDoubles = readWaveAsDoubles(file);
     }
 
+    /**
+     * Alternate Wave object constructor that takes a Double array and a previous Wave object, populating array based on the given Double array.
+     * AudioFormat information is loaded from the previous Wave object.
+     *
+     * @date 3.11.2018 21:51:00
+     * @author Alex Radovan (alexradocole@gmail.com)
+     * @param d
+     * @param r
+     */
     public Wave(double[] d, Wave r) {
         waveAsDoubles = d;
         waveAsShorts = shortsFromDoubles(d);
@@ -45,6 +74,18 @@ public class Wave {
         fileAudioFormat = r.fileAudioFormat;
     }
 
+    /**
+     * Wave object constructor that takes a java.io.File and unzips data, loading header information into appropriate fields, and reading input stream into the Wave's waveAsDouble array.
+     * Shifting is done during read-in according to the shift parameter, specified by the first byte of the header.
+     * A byte representation of the array is stored in the waveAsBytes array, calculated from the waveAsDoubles array.
+     *
+     * To-Do: Update constructor to receive String/URL, and load file local or over http, as well as determine if ZIP or WAV format. Combine.
+     *
+     * @date 3.11.2018 21:31:00
+     * @author Alex Radovan (alexradocole@gmail.com)
+     * @param f
+     * @throws IOException
+     */
     public Wave(File f) throws IOException {
         FileInputStream fis = new FileInputStream(f);
         ZipInputStream zis = new ZipInputStream(new BufferedInputStream(fis));
@@ -257,10 +298,10 @@ public class Wave {
         byte[] bytes = new byte[shiftedInts.length*4];
 
         for (int i = 0; i < shiftedInts.length; i++) {
-            byte a = bytes[((i+1)*4)-4] = (byte)(shiftedInts[i] & 0xff);
-            byte b = bytes[((i+1)*4)-3] = (byte)((shiftedInts[i] >> 8) & 0xff);
-            byte c = bytes[((i+1)*4)-2] = (byte)((shiftedInts[i] >> 16) & 0xff);
-            byte d = bytes[((i+1)*4)-1] = (byte)((shiftedInts[i] >> 24) & 0xff);
+            bytes[((i+1)*4)-4] = (byte)(shiftedInts[i] & 0xff);
+            bytes[((i+1)*4)-3] = (byte)((shiftedInts[i] >> 8) & 0xff);
+            bytes[((i+1)*4)-2] = (byte)((shiftedInts[i] >> 16) & 0xff);
+            bytes[((i+1)*4)-1] = (byte)((shiftedInts[i] >> 24) & 0xff);
         }
 
         byte[] newBytes = new byte[bytes.length + header.length];
@@ -301,13 +342,39 @@ public class Wave {
         return bytes;
     }
 
-    public void playWave() throws LineUnavailableException {
-        Clip c = AudioSystem.getClip();
-        c.open(fileAudioFormat, waveAsBytes, 0, waveAsBytes.length);
-        c.start();
-        JOptionPane.showMessageDialog(null, "Click OK to stop music");
+    public byte[] toBytesFromDoubles(double[] f) {
+        /*byte[] bytes = new byte[f.length*4];
+
+        for (int i = 0; i < f.length; i++) {
+            byte a = bytes[((i+1)*4)-4] = (byte)((int)f[i] & 0xff);
+            byte b = bytes[((i+1)*4)-3] = (byte)(((int)f[i] >> 8) & 0xff);
+            byte c = bytes[((i+1)*4)-2] = (byte)(((int)f[i] >> 16) & 0xff);
+            byte d = bytes[((i+1)*4)-1] = (byte)(((int)f[i] >> 24) & 0xff);
+        }
+        if (fileAudioFormat != null) {
+            AudioFormat format = new AudioFormat(fileAudioFormat.getSampleRate(), 32, fileAudioFormat.getChannels(), true, fileAudioFormat.isBigEndian());
+            fileAudioFormat = format;
+        }*/
+        byte[] bytes = new byte[f.length*2];
+        for (int i = 0; i < f.length; i++) {
+            short s = (short) f[i];
+            byte a = bytes[((i+1)*2)-2] = (byte)(s & 0xff);
+            byte b = bytes[((i+1)*2)-1] = (byte)((s >> 8) & 0xff);
+        }
+
+        return bytes;
     }
 
+    /**
+     * Utility method used for compressing Wavelet coefficients for ZIPing.
+     * The bandwidth of a double array is calculated and used to shift the decimals of the array right.
+     * The resulting doubles are then truncated at that decimal and stored in the shiftedInts array.
+     *
+     * The method returns the number of digits the resulting array has been shifted right.
+     *
+     * @param d
+     * @return the number of digits the resulting shiftedInts array was shifted right.
+     */
     public int toShiftedInts(double[] d) {
         int[] result = new int[d.length];
 
@@ -352,50 +419,84 @@ public class Wave {
         return dig;
     }
 
-    public byte[] toBytesFromDoubles(double[] f) {
-        /*byte[] bytes = new byte[f.length*4];
+    /**
+     * ISSUES: Playback will continue with GUI, no need for blocking. CountDownLatch blocks all activity on Thread until playback completes.
+     * Simple playback method for Wave objects, opens a javax.sound.sampled.Clip and opens using the waveAsBytes array and the Wave's AudioFormat given by fileAudioFormat.
+     * Playback continues through the end of the clip with the thread being maintained by a CountDownLatch triggered by a LineEvent listener waiting for the Clip to a throw a STOP event.
+     *
+     * @date 3.11.2018 21:38:00
+     * @author Alex Radovan (alexradocole@gmail.com)
+     * @throws LineUnavailableException
+     * @throws InterruptedException
+     */
+    public void playWave() throws LineUnavailableException, InterruptedException {
+        Clip c = AudioSystem.getClip();
+        c.open(fileAudioFormat, waveAsBytes, 0, waveAsBytes.length);
+        c.start();
+        CountDownLatch syncLatch = new CountDownLatch(1);
+        c.addLineListener(new LineListener() {
+            @Override
+            public void update(LineEvent event) {
+                if (event.getType() == LineEvent.Type.STOP) {
+                    syncLatch.countDown();
+                }
+            }
+        });
+        syncLatch.await();
+    }
 
-        for (int i = 0; i < f.length; i++) {
-            byte a = bytes[((i+1)*4)-4] = (byte)((int)f[i] & 0xff);
-            byte b = bytes[((i+1)*4)-3] = (byte)(((int)f[i] >> 8) & 0xff);
-            byte c = bytes[((i+1)*4)-2] = (byte)(((int)f[i] >> 16) & 0xff);
-            byte d = bytes[((i+1)*4)-1] = (byte)(((int)f[i] >> 24) & 0xff);
+    /**
+     * UNTESTED: Variable Scale Factor
+     * Simple downsample method which discards every 1 - (1/n) frames of data using Wave's waveAsBytes array.
+     * Wave's fileAudioFormat is replaced with new AudioFormat with correct sample rate for playback.
+     * waveAsBytes value's are replaced with new values.
+     *
+     * @date 3.11.2018 20:01:00
+     * @author Alex Radovan (alexradocole@gmail.com)
+     * @param s where s is a non-zero multiple of 2
+     * @throws InvalidParamException
+     */
+    public void simpleDownSample(int s) throws InvalidParamException {
+        if (s == 0) {
+            throw new InvalidParamException("Param S must be non-zero!");
         }
-        if (fileAudioFormat != null) {
-            AudioFormat format = new AudioFormat(fileAudioFormat.getSampleRate(), 32, fileAudioFormat.getChannels(), true, fileAudioFormat.isBigEndian());
+        else if ((s % 2) == 1) {
+            throw new InvalidParamException("Param S must be a multiple of 2!");
+        }
+        else {
+            byte[] newBytes = new byte[waveAsBytes.length / s];
+
+            int f = fileAudioFormat.getFrameSize();
+
+            int j = 0;
+            for (int i = 0; i < newBytes.length; i++) {
+                if ((j % f) == 0 && j != 0) {
+                    j = j + (f * (s - 1));
+                }
+                try {
+                    newBytes[i] = waveAsBytes[j];
+                } catch (ArrayIndexOutOfBoundsException e) {
+                    e.printStackTrace();
+                }
+                j++;
+            }
+            AudioFormat format = new AudioFormat(fileAudioFormat.getSampleRate() / s, fileAudioFormat.getSampleSizeInBits(), fileAudioFormat.getChannels(), true, fileAudioFormat.isBigEndian());
             fileAudioFormat = format;
-        }*/
-        byte[] bytes = new byte[f.length*2];
-        for (int i = 0; i < f.length; i++) {
-            short s = (short) f[i];
-            byte a = bytes[((i+1)*2)-2] = (byte)(s & 0xff);
-            byte b = bytes[((i+1)*2)-1] = (byte)((s >> 8) & 0xff);
-        }
 
-        return bytes;
+            waveAsBytes = newBytes;
+        }
     }
 
-    public void downSample() {
-        byte[] newBytes = new byte[waveAsBytes.length/10];
-        int j = 0;
-        for (int i = 0; i < newBytes.length; i++) {
-            if ((j % 4) == 0 && j != 0) {
-                j = j + 36;
-            }
-            try {
-                newBytes[i] = waveAsBytes[j];
-            }
-            catch (ArrayIndexOutOfBoundsException e)  {
-                e.printStackTrace();
-            }
-            j++;
-        }
-        AudioFormat format = new AudioFormat(fileAudioFormat.getSampleRate()/10, fileAudioFormat.getSampleSizeInBits(), fileAudioFormat.getChannels(), true, fileAudioFormat.isBigEndian());
-        fileAudioFormat = format;
-
-        waveAsBytes = newBytes;
-    }
-
+    /**
+     * Decompresses a Wave object, expanding the Wave using a FWT given by the Wave's wavelet value.
+     * The reverse transformation is applied to a length adjusted array created from the Wave's waveAsDoubles array, at a level specified by the Wave's tLevel value.
+     * Padding of the array and the subsequent de-padding after transformation is achieved with the use of the ogLength value, present in the ZIP header.
+     *
+     * Decompressed values are stored back in the Wave's waveAsDoubles array, and translated into bytes and stored in the waveAsBytes array.
+     *
+     * @date 3.11.2018 19:22:00
+     * @author Alex Radovan (alexradocole@gmail.com)
+     */
     public void decompress() {
         Transform t = new Transform(new FastWaveletTransform(Operators.getWaveletFromIndex(wavelet)));
 
