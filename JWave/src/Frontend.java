@@ -34,6 +34,7 @@ public class Frontend {
     }
 
     public static void playFile(String path) {
+        path = "src/files/outputs/ran.zip";
         File f = new File(path);
         Wave song = null;
         try {
@@ -45,6 +46,8 @@ public class Frontend {
         try {
             song.playWave();
         } catch (LineUnavailableException e) {
+            e.printStackTrace();
+        } catch (InterruptedException e) {
             e.printStackTrace();
         }
     }

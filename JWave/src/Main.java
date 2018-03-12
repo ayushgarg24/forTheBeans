@@ -1,5 +1,6 @@
 import com.sun.jna.Library;
 import com.sun.jna.Native;
+import files.InvalidParamException;
 import files.R8B;
 import jwave.Transform;
 import jwave.transforms.FastWaveletTransform;
@@ -172,7 +173,11 @@ public class Main {
 
         wave.waveAsBytes = wave.toBytesFromDoubles(wave.waveAsDoubles);
 
-        wave.downSample();
+        try {
+            wave.simpleDownSample(2);
+        } catch (InvalidParamException e) {
+            e.printStackTrace();
+        }
 
         wave.toSimpleZip("src/files/outputs/waveDown.zip");
 
@@ -181,6 +186,8 @@ public class Main {
             ranIn.playWave();
             //wave.playWave();
         } catch (LineUnavailableException e) {
+            e.printStackTrace();
+        } catch (InterruptedException e) {
             e.printStackTrace();
         }
 
