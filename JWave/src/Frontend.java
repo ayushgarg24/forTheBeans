@@ -34,12 +34,14 @@ public class Frontend {
     }
 
     public static void playFile(String path) {
-        path = "src/files/outputs/ran.zip";
-        File f = new File(path);
+        //path = "src/files/outputs/ran.zip";
+        path = "https://storage.googleapis.com/stuffandthingsforstuff/ran.zip";
         Wave song = null;
         try {
-            song = new Wave(f);
+            song = new Wave(path);
         } catch (IOException e) {
+            e.printStackTrace();
+        } catch (UnsupportedAudioFileException e) {
             e.printStackTrace();
         }
         song.decompress();
