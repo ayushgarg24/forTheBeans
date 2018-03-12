@@ -5,6 +5,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.IOException;
+import java.net.URISyntaxException;
 
 public class Frontend {
     public static void main(String[] args) {
@@ -35,13 +36,15 @@ public class Frontend {
 
     public static void playFile(String path) {
         //path = "src/files/outputs/ran.zip";
-        path = "https://storage.googleapis.com/stuffandthingsforstuff/ran.zip";
+        path = "http://storage.googleapis.com/stuffandthingsforstuff/ran.zip";
         Wave song = null;
         try {
             song = new Wave(path);
         } catch (IOException e) {
             e.printStackTrace();
         } catch (UnsupportedAudioFileException e) {
+            e.printStackTrace();
+        } catch (URISyntaxException e) {
             e.printStackTrace();
         }
         song.decompress();

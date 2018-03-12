@@ -4,8 +4,8 @@ import jwave.transforms.FastWaveletTransform;
 
 import javax.sound.sampled.*;
 import java.io.*;
-import java.net.MalformedURLException;
-import java.net.URL;
+import java.net.*;
+import java.nio.file.Paths;
 import java.util.concurrent.CountDownLatch;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
@@ -152,7 +152,7 @@ public class Wave {
         waveAsBytes = toBytesFromDoubles(doubles);
     }
 
-    public Wave(String path) throws IOException, UnsupportedAudioFileException {
+    public Wave(String path) throws IOException, UnsupportedAudioFileException, URISyntaxException {
         URL url = null;
         if (path.contains("zip")) {     //Determine if given path points to a compressed or uncompressed file, and load Wave.
             //<editor-fold desc="Read Wave from compressed ZIP.">
@@ -163,6 +163,7 @@ public class Wave {
             }
             //FileInputStream fis = new FileInputStream();
             InputStream in = url.openStream();
+
             ZipInputStream zis = new ZipInputStream(new BufferedInputStream(in));
 
             ByteArrayOutputStream out = new ByteArrayOutputStream();

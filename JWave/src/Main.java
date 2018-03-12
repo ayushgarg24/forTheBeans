@@ -12,6 +12,7 @@ import javax.script.ScriptEngine;
 import javax.script.ScriptException;
 import javax.sound.sampled.*;
 import java.io.*;
+import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -19,7 +20,12 @@ public class Main {
     public static void main(String[] args) throws IOException, UnsupportedAudioFileException {
         String path = "src/files/inputs/first20.wav";
 
-        Wave wave = new Wave(path);
+        Wave wave = null;
+        try {
+            wave = new Wave(path);
+        } catch (URISyntaxException e) {
+            e.printStackTrace();
+        }
 
         wave.wavelet = 39;
 
