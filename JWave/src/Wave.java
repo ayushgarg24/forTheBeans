@@ -5,7 +5,6 @@ import jwave.transforms.FastWaveletTransform;
 import javax.sound.sampled.*;
 import java.io.*;
 import java.net.*;
-import java.nio.file.Paths;
 import java.util.concurrent.CountDownLatch;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
@@ -39,6 +38,7 @@ public class Wave {
     protected int ogLength;
     //</editor-fold>
 
+    //<editor-fold desc="Obsolete">
     /**
      * Wave object constructor that takes a String path, loading a corresponding java.io.File and loading audio format info using AudioSystem.
      * The waveAsDoubles array is then populated by the readWaveAsDoubles method with the File object as a parameter.
@@ -59,26 +59,9 @@ public class Wave {
         fileAudioFormat = fileFormat.getFormat();
         waveAsDoubles = readWaveAsDoubles(file);
     }*/
+    //</editor-fold>
 
-    /**
-     * Alternate Wave object constructor that takes a Double array and a previous Wave object, populating array based on the given Double array.
-     * AudioFormat information is loaded from the previous Wave object.
-     *
-     * @date 3.11.2018 21:51:00
-     * @author Alex Radovan (alexradocole@gmail.com)
-     * @param d
-     * @param r
-     */
-    public Wave(double[] d, Wave r) {
-        waveAsDoubles = d;
-        waveAsShorts = shortsFromDoubles(d);
-        waveAsBytes = bytesFromShorts(waveAsShorts);
-
-        fileFormat = r.fileFormat;
-        fileType = r.fileType;
-        fileAudioFormat = r.fileAudioFormat;
-    }
-
+    //<editor-fold desc="Obsolete">
     /**
      * Wave object constructor that takes a java.io.File and unzips data, loading header information into appropriate fields, and reading input stream into the Wave's waveAsDouble array.
      * Shifting is done during read-in according to the shift parameter, specified by the first byte of the header.
@@ -91,7 +74,7 @@ public class Wave {
      * @param f
      * @throws IOException
      */
-    public Wave(File f) throws IOException {
+    /*public Wave(File f) throws IOException {
         FileInputStream fis = new FileInputStream(f);
         ZipInputStream zis = new ZipInputStream(new BufferedInputStream(fis));
 
@@ -150,9 +133,30 @@ public class Wave {
         waveAsDoubles = doubles;
 
         waveAsBytes = toBytesFromDoubles(doubles);
-    }
+    }*/
+    //</editor-fold>
 
-    public Wave(String path) throws IOException, UnsupportedAudioFileException, URISyntaxException {
+    /**
+     * Wave object constructor that takes a String path pointing to either a local file or URL. Path is parsed to determine whether to load the Wave object from ZIP or WAV.
+     *
+     * FOR ZIP:
+     * Data is unzipped, loading header information into appropriate fields, and reading input stream into the Wave's waveAsDouble array.
+     * Shifting is done during read-in according to the shift parameter, specified by the first byte of the header.
+     * A byte representation of the array is stored in the waveAsBytes array, calculated from the waveAsDoubles array.
+     *
+     * FOR WAV:
+     * Audio format info is loaded using AudioSystem.
+     * The waveAsDoubles array is then populated by the readWaveAsDoubles method with the URL object as a parameter.
+     *
+     * Input path is stored in waveURL as a URL object regardless of type.
+     *
+     * @date 3.12.2018 20:26:00
+     * @author Alex Radovan (alexradocole@gmail.com)
+     * @param path
+     * @throws IOException
+     * @throws UnsupportedAudioFileException
+     */
+    public Wave(String path) throws IOException, UnsupportedAudioFileException {
         URL url = null;
         if (path.contains("zip")) {     //Determine if given path points to a compressed or uncompressed file, and load Wave.
             //<editor-fold desc="Read Wave from compressed ZIP.">
@@ -240,6 +244,25 @@ public class Wave {
         waveURL = url;
     }
 
+    /**
+     * Alternate Wave object constructor that takes a Double array and a previous Wave object, populating array based on the given Double array.
+     * AudioFormat information is loaded from the previous Wave object.
+     *
+     * @date 3.11.2018 21:51:00
+     * @author Alex Radovan (alexradocole@gmail.com)
+     * @param d
+     * @param r
+     */
+    public Wave(double[] d, Wave r) {
+        waveAsDoubles = d;
+        waveAsShorts = shortsFromDoubles(d);
+        waveAsBytes = bytesFromShorts(waveAsShorts);
+
+        fileFormat = r.fileFormat;
+        fileType = r.fileType;
+        fileAudioFormat = r.fileAudioFormat;
+    }
+
     public double[] readWaveAsDoubles(URL u) throws IOException, UnsupportedAudioFileException {
         short[] shorts = readWaveAsShorts(u);
 
@@ -312,6 +335,15 @@ public class Wave {
         return bytes;
     }
 
+    /**
+     * Simple method to save Wave object as an audio file to the local system, mostly only for use in testing.
+     *
+     * To-Do: Possible frontend implementation to store streamed/downloaded audio to local machine.
+     *
+     * @date 3.12.2018 20:32:00
+     * @author Alex Radovan (alexradocole@gmail.com)
+     * @param path
+     */
     public void toFile(String path) {
         File output = new File(path);
 
@@ -328,6 +360,17 @@ public class Wave {
         file = new File(path);
     }
 
+    /**
+     * Simple method to save Wave object as a binary file to the local system. Primarily for testing.
+     *
+     * To-Do: Possible frontend implementation to store streamed/downloaded audio to local machine.
+     *
+     * @date 3.12.2018 20:35:00
+     * @author Alex Radovan (alexradocole@gmail.com)
+     * @param path
+     * @param type
+     * @throws IOException
+     */
     public void toBinaryFile(String path, String type) throws IOException {
         DataOutputStream os = new DataOutputStream(new FileOutputStream(path));
         if (type == "doubles") {

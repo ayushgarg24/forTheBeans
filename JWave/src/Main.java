@@ -20,12 +20,7 @@ public class Main {
     public static void main(String[] args) throws IOException, UnsupportedAudioFileException {
         String path = "src/files/inputs/first20.wav";
 
-        Wave wave = null;
-        try {
-            wave = new Wave(path);
-        } catch (URISyntaxException e) {
-            e.printStackTrace();
-        }
+        Wave wave = new Wave(path);
 
         wave.wavelet = 39;
 
@@ -168,8 +163,8 @@ public class Main {
         ranWave.toZipFile("src/files/outputs/ran.zip");
         wave.toZipFile("src/files/outputs/wave.zip");
 
-        File f = new File("src/files/outputs/ran.zip");
-        Wave ranIn = new Wave(f);
+        String p = "src/files/outputs/ran.zip";
+        Wave ranIn = new Wave(p);
 
         Transform set2 = new Transform(new FastWaveletTransform(Operators.getWaveletFromIndex(ranIn.wavelet)));
 

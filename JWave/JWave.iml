@@ -12,8 +12,5 @@
     <orderEntry type="library" name="R User Library" level="project" />
     <orderEntry type="library" name="R Skeletons" level="application" />
     <orderEntry type="library" name="renjin-script-engine-0.9.2594-jar-with-dependencies" level="project" />
-    <orderEntry type="library" name="org.jfree:jfreechart:1.5.0" level="project" />
-    <orderEntry type="library" name="client" level="project" />
-    <orderEntry type="library" name="net.java.dev.jna:jna-platform:4.5.1" level="project" />
   </component>
 </module>

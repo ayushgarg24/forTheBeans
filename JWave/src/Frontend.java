@@ -22,7 +22,7 @@ public class Frontend {
         JTextArea a = new JTextArea();
         panel.add(a);
 
-        JButton b = new JButton();
+        JButton b = new JButton("Play");
         b.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -43,8 +43,6 @@ public class Frontend {
         } catch (IOException e) {
             e.printStackTrace();
         } catch (UnsupportedAudioFileException e) {
-            e.printStackTrace();
-        } catch (URISyntaxException e) {
             e.printStackTrace();
         }
         song.decompress();
