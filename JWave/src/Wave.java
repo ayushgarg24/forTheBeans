@@ -627,12 +627,15 @@ public class Wave {
      *
      * @date 3.11.2018 21:38:00
      * @author Alex Radovan (alexradocole@gmail.com)
-     * @throws LineUnavailableException
-     * @throws InterruptedException
      */
-    public void playWave() throws LineUnavailableException, InterruptedException {
-        Clip c = AudioSystem.getClip();
-        c.open(fileAudioFormat, waveAsBytes, 0, waveAsBytes.length);
+    public void playWave() {
+        Clip c = null;
+        try {
+            c = AudioSystem.getClip();
+            c.open(fileAudioFormat, waveAsBytes, 0, waveAsBytes.length);
+        } catch (LineUnavailableException e) {
+            e.printStackTrace();
+        }
         c.start();
         CountDownLatch syncLatch = new CountDownLatch(1);
         c.addLineListener(new LineListener() {
@@ -643,7 +646,11 @@ public class Wave {
                 }
             }
         });
-        syncLatch.await();
+        try {
+            syncLatch.await();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
     public void streamWave() {

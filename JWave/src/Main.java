@@ -172,14 +172,8 @@ public class Main {
         wave.toSimpleZip("src/files/outputs/waveDown.zip");
 
         System.out.println("Playing!");
-        try {
             ranIn.playWave();
             //wave.playWave();
-        } catch (LineUnavailableException e) {
-            e.printStackTrace();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
 
         System.out.println("Done");
 

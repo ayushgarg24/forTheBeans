@@ -2,8 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b86c335b-4056-462a-8d05-9d33bde99e20" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/Demo.java" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/out/production/JWave/Main.class" afterPath="$PROJECT_DIR$/out/production/JWave/Main.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/JWave/Wave$1.class" afterPath="$PROJECT_DIR$/out/production/JWave/Wave$1.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/JWave/Wave$2.class" afterPath="$PROJECT_DIR$/out/production/JWave/Wave$2.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/JWave/Wave.class" afterPath="$PROJECT_DIR$/out/production/JWave/Wave.class" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" afterPath="$PROJECT_DIR$/src/Main.java" />
       <change beforePath="$PROJECT_DIR$/src/Wave.java" afterPath="$PROJECT_DIR$/src/Wave.java" />
+      <change beforePath="$PROJECT_DIR$/src/files/outputs/ran.zip" afterPath="$PROJECT_DIR$/src/files/outputs/ran.zip" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -18,8 +25,8 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1122">
-              <caret line="151" column="55" lean-forward="true" selection-start-line="123" selection-start-column="8" selection-end-line="151" selection-end-column="55" />
+            <state relative-caret-position="960">
+              <caret line="173" column="39" lean-forward="false" selection-start-line="173" selection-start-column="39" selection-end-line="173" selection-end-column="39" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -30,8 +37,8 @@
       <file leaf-file-name="Frontend.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Frontend.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="32">
-              <caret line="53" column="5" lean-forward="false" selection-start-line="53" selection-start-column="5" selection-end-line="53" selection-end-column="5" />
+            <state relative-caret-position="612">
+              <caret line="73" column="11" lean-forward="true" selection-start-line="56" selection-start-column="8" selection-end-line="73" selection-end-column="11" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -39,11 +46,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Wave.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Wave.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Wave.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="707">
-              <caret line="727" column="41" lean-forward="false" selection-start-line="727" selection-start-column="41" selection-end-line="727" selection-end-column="41" />
+            <state relative-caret-position="186">
+              <caret line="630" column="27" lean-forward="false" selection-start-line="630" selection-start-column="27" selection-end-line="630" selection-end-column="27" />
               <folding>
                 <element signature="docComment;class#Wave#0" expanded="false" />
                 <element signature="e#1456#1487#0" expanded="false" />
@@ -74,8 +81,20 @@
                 <element signature="method#playWave#0;class#Wave#0" expanded="false" />
                 <element signature="method#simpleDownSample#0;class#Wave#0" expanded="false" />
                 <element signature="docComment;method#decompress#0;class#Wave#0" expanded="false" />
-                <element signature="e#28545#28598#0" expanded="false" />
-                <element signature="e#31262#31310#0" expanded="false" />
+                <element signature="e#28649#28702#0" expanded="false" />
+                <element signature="e#31366#31414#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Demo.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Demo.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="522">
+              <caret line="18" column="34" lean-forward="true" selection-start-line="18" selection-start-column="34" selection-end-line="18" selection-end-column="34" />
+              <folding>
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -133,10 +152,11 @@
         <option value="$PROJECT_DIR$/src/Operators.java" />
         <option value="$PROJECT_DIR$/src/test.java" />
         <option value="$PROJECT_DIR$/src/files/InvalidParamException.java" />
-        <option value="$PROJECT_DIR$/src/Main.java" />
         <option value="$PROJECT_DIR$/src/Frontend.java" />
         <option value="$PROJECT_DIR$/src/WavePlayer.java" />
         <option value="$PROJECT_DIR$/src/Wave.java" />
+        <option value="$PROJECT_DIR$/src/Demo.java" />
+        <option value="$PROJECT_DIR$/src/Main.java" />
       </list>
     </option>
   </component>
@@ -237,13 +257,27 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Frontend">
+  <component name="RunManager" selected="Application.Demo">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="HTML_USED" value="false" />
       <option name="WIDTH" value="400" />
       <option name="HEIGHT" value="300" />
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <module />
+    </configuration>
+    <configuration name="Demo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" value="Demo" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="JWave" />
+      <envs />
     </configuration>
     <configuration name="Frontend" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
@@ -361,16 +395,18 @@
       <option name="PROGRAM_PARAMETERS" />
       <predefined_log_file id="idea.log" enabled="true" />
     </configuration>
-    <list size="3">
+    <list size="4">
       <item index="0" class="java.lang.String" itemvalue="Application.Frontend" />
       <item index="1" class="java.lang.String" itemvalue="Application.Main" />
       <item index="2" class="java.lang.String" itemvalue="Application.test" />
+      <item index="3" class="java.lang.String" itemvalue="Application.Demo" />
     </list>
     <recent_temporary>
-      <list size="3">
-        <item index="0" class="java.lang.String" itemvalue="Application.Frontend" />
-        <item index="1" class="java.lang.String" itemvalue="Application.Main" />
-        <item index="2" class="java.lang.String" itemvalue="Application.test" />
+      <list size="4">
+        <item index="0" class="java.lang.String" itemvalue="Application.Demo" />
+        <item index="1" class="java.lang.String" itemvalue="Application.Frontend" />
+        <item index="2" class="java.lang.String" itemvalue="Application.Main" />
+        <item index="3" class="java.lang.String" itemvalue="Application.test" />
       </list>
     </recent_temporary>
   </component>
@@ -400,7 +436,7 @@
       <workItem from="1521044873042" duration="5327000" />
       <workItem from="1521140468370" duration="9965000" />
       <workItem from="1521173027542" duration="4570000" />
-      <workItem from="1521216448395" duration="2727000" />
+      <workItem from="1521216448395" duration="3195000" />
     </task>
     <task id="LOCAL-00001" summary="Workspace">
       <created>1521045701876</created>
@@ -416,45 +452,52 @@
       <option name="project" value="LOCAL" />
       <updated>1521218396409</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Adding compress method">
+      <created>1521219199291</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1521219199291</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="65228000" />
+    <option name="totallyTimeSpent" value="65696000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-12" y="-12" width="3224" height="1754" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290735" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3273495" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.209375" sideWeight="0.49448818" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="R Packages" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="R Graphics" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Google Cloud Storage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21041666" sideWeight="0.5055118" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3284055" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32779554" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290735" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32715654" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.209375" sideWeight="0.49448818" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="R Packages" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Google Cloud Storage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3284055" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3284055" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
@@ -504,19 +547,20 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Workspace" />
     <MESSAGE value="Updated Wave to stream to GCS" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated Wave to stream to GCS" />
+    <MESSAGE value="Adding compress method" />
+    <option name="LAST_COMMIT_MESSAGE" value="Adding compress method" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Wave.java</url>
-          <line>870</line>
+          <line>877</line>
           <properties />
           <option name="timeStamp" value="29" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="31" />
+      <option name="time" value="32" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">
@@ -525,46 +569,6 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Wave.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17226">
-          <caret line="594" column="0" lean-forward="false" selection-start-line="594" selection-start-column="0" selection-end-line="594" selection-end-column="0" />
-          <folding>
-            <element signature="docComment;class#Wave#0" expanded="false" />
-            <element signature="e#1456#1487#0" expanded="false" />
-            <element signature="e#2445#2476#0" expanded="false" />
-            <element signature="docComment;method#Wave#0;class#Wave#0" expanded="false" />
-            <element signature="method#Wave#0;class#Wave#0" expanded="false" />
-            <element signature="e#6650#6703#0" expanded="false" />
-            <element signature="e#9367#9415#0" expanded="false" />
-            <element signature="docComment;method#Wave#1;class#Wave#0" expanded="false" />
-            <element signature="method#Wave#1;class#Wave#0" expanded="false" />
-            <element signature="method#readWaveAsDoubles#0;class#Wave#0" expanded="false" />
-            <element signature="method#readWaveAsBytes#0;class#Wave#0" expanded="false" />
-            <element signature="method#readWaveAsShorts#0;class#Wave#0" expanded="false" />
-            <element signature="method#shortsFromDoubles#0;class#Wave#0" expanded="false" />
-            <element signature="method#bytesFromShorts#0;class#Wave#0" expanded="false" />
-            <element signature="docComment;method#toFile#0;class#Wave#0" expanded="false" />
-            <element signature="method#toFile#0;class#Wave#0" expanded="false" />
-            <element signature="docComment;method#toBinaryFile#0;class#Wave#0" expanded="false" />
-            <element signature="method#toBinaryFile#0;class#Wave#0" expanded="false" />
-            <element signature="method#toZipFile#0;class#Wave#0" expanded="false" />
-            <element signature="method#toZipStream#0;class#Wave#0" expanded="false" />
-            <element signature="method#toSimpleZip#0;class#Wave#0" expanded="false" />
-            <element signature="method#getBytesFromDoubles#0;class#Wave#0" expanded="false" />
-            <element signature="method#toBytesFromDoubles#0;class#Wave#0" expanded="false" />
-            <element signature="docComment;method#toShiftedInts#0;class#Wave#0" expanded="false" />
-            <element signature="method#toShiftedInts#0;class#Wave#0" expanded="false" />
-            <element signature="docComment;method#playWave#0;class#Wave#0" expanded="false" />
-            <element signature="method#playWave#0;class#Wave#0" expanded="false" />
-            <element signature="method#simpleDownSample#0;class#Wave#0" expanded="false" />
-            <element signature="docComment;method#decompress#0;class#Wave#0" expanded="false" />
-            <element signature="e#28545#28598#0" expanded="false" />
-            <element signature="e#31262#31310#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4263">
@@ -632,8 +636,8 @@
             <element signature="method#playWave#0;class#Wave#0" expanded="false" />
             <element signature="method#simpleDownSample#0;class#Wave#0" expanded="false" />
             <element signature="docComment;method#decompress#0;class#Wave#0" expanded="false" />
-            <element signature="e#28545#28598#0" expanded="false" />
-            <element signature="e#31262#31310#0" expanded="false" />
+            <element signature="e#28649#28702#0" expanded="false" />
+            <element signature="e#31366#31414#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -698,8 +702,8 @@
             <element signature="method#playWave#0;class#Wave#0" expanded="false" />
             <element signature="method#simpleDownSample#0;class#Wave#0" expanded="false" />
             <element signature="docComment;method#decompress#0;class#Wave#0" expanded="false" />
-            <element signature="e#28545#28598#0" expanded="false" />
-            <element signature="e#31262#31310#0" expanded="false" />
+            <element signature="e#28649#28702#0" expanded="false" />
+            <element signature="e#31366#31414#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -772,8 +776,8 @@
             <element signature="method#playWave#0;class#Wave#0" expanded="false" />
             <element signature="method#simpleDownSample#0;class#Wave#0" expanded="false" />
             <element signature="docComment;method#decompress#0;class#Wave#0" expanded="false" />
-            <element signature="e#28545#28598#0" expanded="false" />
-            <element signature="e#31262#31310#0" expanded="false" />
+            <element signature="e#28649#28702#0" expanded="false" />
+            <element signature="e#31366#31414#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -830,8 +834,8 @@
             <element signature="method#playWave#0;class#Wave#0" expanded="false" />
             <element signature="method#simpleDownSample#0;class#Wave#0" expanded="false" />
             <element signature="docComment;method#decompress#0;class#Wave#0" expanded="false" />
-            <element signature="e#28545#28598#0" expanded="false" />
-            <element signature="e#31262#31310#0" expanded="false" />
+            <element signature="e#28649#28702#0" expanded="false" />
+            <element signature="e#31366#31414#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1048,18 +1052,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Frontend.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="32">
-          <caret line="53" column="5" lean-forward="false" selection-start-line="53" selection-start-column="5" selection-end-line="53" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1122">
-          <caret line="151" column="55" lean-forward="true" selection-start-line="123" selection-start-column="8" selection-end-line="151" selection-end-column="55" />
+        <state relative-caret-position="612">
+          <caret line="73" column="11" lean-forward="true" selection-start-line="56" selection-start-column="8" selection-end-line="73" selection-end-column="11" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1068,8 +1062,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Wave.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="707">
-          <caret line="727" column="41" lean-forward="false" selection-start-line="727" selection-start-column="41" selection-end-line="727" selection-end-column="41" />
+        <state relative-caret-position="186">
+          <caret line="630" column="27" lean-forward="false" selection-start-line="630" selection-start-column="27" selection-end-line="630" selection-end-column="27" />
           <folding>
             <element signature="docComment;class#Wave#0" expanded="false" />
             <element signature="e#1456#1487#0" expanded="false" />
@@ -1100,8 +1094,28 @@
             <element signature="method#playWave#0;class#Wave#0" expanded="false" />
             <element signature="method#simpleDownSample#0;class#Wave#0" expanded="false" />
             <element signature="docComment;method#decompress#0;class#Wave#0" expanded="false" />
-            <element signature="e#28545#28598#0" expanded="false" />
-            <element signature="e#31262#31310#0" expanded="false" />
+            <element signature="e#28649#28702#0" expanded="false" />
+            <element signature="e#31366#31414#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="960">
+          <caret line="173" column="39" lean-forward="false" selection-start-line="173" selection-start-column="39" selection-end-line="173" selection-end-column="39" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Demo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="522">
+          <caret line="18" column="34" lean-forward="true" selection-start-line="18" selection-start-column="34" selection-end-line="18" selection-end-column="34" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1172,7 +1186,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
-          <last-edited>R User Library</last-edited>
+          <last-edited>de.sciss:jwave:1.0.3</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
