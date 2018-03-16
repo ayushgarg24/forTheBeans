@@ -46,12 +46,22 @@ public class Frontend {
             e.printStackTrace();
         }
         song.decompress();
-        try {
+        /*try {
             song.playWave();
         } catch (LineUnavailableException e) {
             e.printStackTrace();
         } catch (InterruptedException e) {
             e.printStackTrace();
+        }*/
+        song.streamWave();
+        for (int i = 1; i < 18; i++) {
+            try {
+                song.addToWave("https://storage.googleapis.com/rd-site-resources/wavelets/first20/first20_" + i + ".wav");
+            } catch (IOException e) {
+                e.printStackTrace();
+            } catch (UnsupportedAudioFileException e) {
+                e.printStackTrace();
+            }
         }
     }
 }

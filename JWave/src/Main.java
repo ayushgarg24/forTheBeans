@@ -1,20 +1,9 @@
-import com.sun.jna.Library;
-import com.sun.jna.Native;
 import files.InvalidParamException;
-import files.R8B;
 import jwave.Transform;
 import jwave.transforms.FastWaveletTransform;
-import jwave.transforms.wavelets.daubechies.Daubechies20;
-import jwave.transforms.wavelets.daubechies.Daubechies8;
-import org.renjin.script.RenjinScriptEngineFactory;
 
-import javax.script.ScriptEngine;
-import javax.script.ScriptException;
 import javax.sound.sampled.*;
 import java.io.*;
-import java.net.URISyntaxException;
-import java.util.ArrayList;
-import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) throws IOException, UnsupportedAudioFileException {
