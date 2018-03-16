@@ -8,6 +8,10 @@ import java.io.IOException;
 import java.net.URISyntaxException;
 
 public class Frontend {
+    protected static Wave song;
+    protected static boolean playing = false;
+    protected static Thread playSong;
+    protected static WavePlayer wp = new WavePlayer();
     public static void main(String[] args) {
         JFrame frame = new JFrame();
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -23,13 +27,28 @@ public class Frontend {
         panel.add(a);
 
         JButton b = new JButton("Play");
+        JButton stop = new JButton("Stop");
+
+        stop.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                wp.stop();
+            }
+        });
         b.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                playFile(a.getText());
+                playing = true;
+                 playSong = new Thread() {
+                    public void run() {
+                        stream();
+                    }
+                };
+                playSong.start();
             }
         });
         panel.add(b);
+        panel.add(stop);
 
         return panel;
     }
@@ -37,7 +56,7 @@ public class Frontend {
     public static void playFile(String path) {
         //path = "src/files/outputs/ran.zip";
         path = "http://storage.googleapis.com/stuffandthingsforstuff/ran.zip";
-        Wave song = null;
+        song = null;
         try {
             song = new Wave(path);
         } catch (IOException e) {
@@ -63,5 +82,16 @@ public class Frontend {
                 e.printStackTrace();
             }
         }
+    }
+
+    public static void stream() {
+        try {
+            wp.setSource("https://storage.googleapis.com/rd-site-resources/wavelets/first20/first20_1.wav");
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (UnsupportedAudioFileException e) {
+            e.printStackTrace();
+        }
+        wp.play();
     }
 }

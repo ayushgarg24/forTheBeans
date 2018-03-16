@@ -2,11 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b86c335b-4056-462a-8d05-9d33bde99e20" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/WavePlayer.java" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/out/production/JWave/Frontend$1.class" afterPath="$PROJECT_DIR$/out/production/JWave/Frontend$1.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/JWave/Frontend.class" afterPath="$PROJECT_DIR$/out/production/JWave/Frontend.class" />
       <change beforePath="$PROJECT_DIR$/src/Frontend.java" afterPath="$PROJECT_DIR$/src/Frontend.java" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" afterPath="$PROJECT_DIR$/src/Main.java" />
       <change beforePath="$PROJECT_DIR$/src/Wave.java" afterPath="$PROJECT_DIR$/src/Wave.java" />
-      <change beforePath="$PROJECT_DIR$/src/files/R8B.java" afterPath="" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -21,11 +22,9 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="145">
-              <caret line="5" column="17" lean-forward="false" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="-697">
+              <caret line="2" column="17" lean-forward="false" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -33,23 +32,26 @@
       <file leaf-file-name="Frontend.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Frontend.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="848">
-              <caret line="63" column="13" lean-forward="true" selection-start-line="63" selection-start-column="13" selection-end-line="63" selection-end-column="13" />
+            <state relative-caret-position="144">
+              <caret line="34" column="26" lean-forward="true" selection-start-line="34" selection-start-column="26" selection-end-line="34" selection-end-column="26" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#849#850#0" expanded="true" />
-                <element signature="e#902#903#0" expanded="true" />
+                <element signature="e#1068#1069#0" expanded="true" />
+                <element signature="e#1109#1110#0" expanded="true" />
+                <element signature="e#1313#1441#0" expanded="true" />
+                <element signature="e#1440#1441#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Wave.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Wave.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Wave.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1954">
-              <caret line="762" column="0" lean-forward="false" selection-start-line="762" selection-start-column="0" selection-end-line="762" selection-end-column="0" />
+            <state relative-caret-position="352">
+              <caret line="764" column="0" lean-forward="false" selection-start-line="764" selection-start-column="0" selection-end-line="764" selection-end-column="0" />
               <folding>
+                <element signature="docComment;class#Wave#0" expanded="false" />
                 <element signature="e#1456#1487#0" expanded="false" />
                 <element signature="e#2445#2476#0" expanded="false" />
                 <element signature="docComment;method#Wave#0;class#Wave#0" expanded="false" />
@@ -74,13 +76,25 @@
                 <element signature="docComment;method#toShiftedInts#0;class#Wave#0" expanded="false" />
                 <element signature="method#toShiftedInts#0;class#Wave#0" expanded="false" />
                 <element signature="docComment;method#playWave#0;class#Wave#0" expanded="false" />
+                <element signature="method#playWave#0;class#Wave#0" expanded="false" />
                 <element signature="e#21344#22106#0" expanded="true" />
                 <element signature="e#22105#22106#0" expanded="true" />
                 <element signature="docComment;method#simpleDownSample#0;class#Wave#0" expanded="false" />
                 <element signature="method#simpleDownSample#0;class#Wave#0" expanded="false" />
                 <element signature="docComment;method#decompress#0;class#Wave#0" expanded="false" />
                 <element signature="method#decompress#0;class#Wave#0" expanded="false" />
-                <element signature="e#25072#25125#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="WavePlayer.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/WavePlayer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="646">
+              <caret line="38" column="73" lean-forward="false" selection-start-line="38" selection-start-column="73" selection-end-line="38" selection-end-column="73" />
+              <folding>
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -89,7 +103,7 @@
       <file leaf-file-name="Operators.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Operators.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="174">
+            <state relative-caret-position="102">
               <caret line="33" column="68" lean-forward="false" selection-start-line="33" selection-start-column="68" selection-end-line="33" selection-end-column="68" />
               <folding>
                 <element signature="method#getDoubleArrayOfCorrectLength#0;class#Operators#0" expanded="false" />
@@ -127,8 +141,9 @@
         <option value="$PROJECT_DIR$/src/test.java" />
         <option value="$PROJECT_DIR$/src/files/InvalidParamException.java" />
         <option value="$PROJECT_DIR$/src/Main.java" />
-        <option value="$PROJECT_DIR$/src/Frontend.java" />
         <option value="$PROJECT_DIR$/src/Wave.java" />
+        <option value="$PROJECT_DIR$/src/Frontend.java" />
+        <option value="$PROJECT_DIR$/src/WavePlayer.java" />
       </list>
     </option>
   </component>
@@ -165,6 +180,19 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="AndroidView" />
+      <pane id="PackagesPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="JWave" type="58d84e3e:PackageViewProjectNode" />
+              <item name="JWave" type="616d4139:PackageViewModuleNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -192,20 +220,7 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="JWave" type="58d84e3e:PackageViewProjectNode" />
-              <item name="JWave" type="616d4139:PackageViewModuleNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="Scratches" />
       <pane id="Scope" />
-      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -391,6 +406,7 @@
       <workItem from="1521003204941" duration="1228000" />
       <workItem from="1521044873042" duration="5327000" />
       <workItem from="1521140468370" duration="9965000" />
+      <workItem from="1521173027542" duration="4570000" />
     </task>
     <task id="LOCAL-00001" summary="Workspace">
       <created>1521045701876</created>
@@ -403,10 +419,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="57931000" />
+    <option name="totallyTimeSpent" value="62501000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-12" y="-12" width="3224" height="1754" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -419,16 +435,16 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21041666" sideWeight="0.5055118" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290735" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3284055" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290735" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3284055" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290735" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32779554" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3273495" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2096875" sideWeight="0.49448818" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.209375" sideWeight="0.49448818" order="0" side_tool="false" content_ui="combo" />
       <window_info id="R Packages" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Google Cloud Storage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
@@ -489,7 +505,15 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="26" />
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Wave.java</url>
+          <line>764</line>
+          <properties />
+          <option name="timeStamp" value="29" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="30" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">
@@ -498,19 +522,12 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/test.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="290">
-          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Wave.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17226">
           <caret line="594" column="0" lean-forward="false" selection-start-line="594" selection-start-column="0" selection-end-line="594" selection-end-column="0" />
           <folding>
+            <element signature="docComment;class#Wave#0" expanded="false" />
             <element signature="e#1456#1487#0" expanded="false" />
             <element signature="e#2445#2476#0" expanded="false" />
             <element signature="docComment;method#Wave#0;class#Wave#0" expanded="false" />
@@ -535,13 +552,13 @@
             <element signature="docComment;method#toShiftedInts#0;class#Wave#0" expanded="false" />
             <element signature="method#toShiftedInts#0;class#Wave#0" expanded="false" />
             <element signature="docComment;method#playWave#0;class#Wave#0" expanded="false" />
+            <element signature="method#playWave#0;class#Wave#0" expanded="false" />
             <element signature="e#21344#22106#0" expanded="true" />
             <element signature="e#22105#22106#0" expanded="true" />
             <element signature="docComment;method#simpleDownSample#0;class#Wave#0" expanded="false" />
             <element signature="method#simpleDownSample#0;class#Wave#0" expanded="false" />
             <element signature="docComment;method#decompress#0;class#Wave#0" expanded="false" />
             <element signature="method#decompress#0;class#Wave#0" expanded="false" />
-            <element signature="e#25072#25125#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -550,9 +567,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4263">
           <caret line="161" column="53" lean-forward="false" selection-start-line="161" selection-start-column="26" selection-end-line="161" selection-end-column="53" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -568,7 +583,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="957">
           <caret line="36" column="0" lean-forward="true" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="method#getDoubleArrayOfCorrectLength#0;class#Operators#0" expanded="false" />
+            <element signature="method#getDoubleArrayTruncated#0;class#Operators#0" expanded="false" />
+            <element signature="method#removeZeroesFromDoubles#0;class#Operators#0" expanded="false" />
+            <element signature="method#addZeroesToDoubles#0;class#Operators#0" expanded="false" />
+            <element signature="method#getAvg#0;class#Operators#0" expanded="false" />
+            <element signature="method#getWaveletFromIndex#0;class#Operators#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -577,6 +599,7 @@
         <state relative-caret-position="10005">
           <caret line="345" column="0" lean-forward="true" selection-start-line="345" selection-start-column="0" selection-end-line="345" selection-end-column="0" />
           <folding>
+            <element signature="docComment;class#Wave#0" expanded="false" />
             <element signature="e#1456#1487#0" expanded="false" />
             <element signature="e#2445#2476#0" expanded="false" />
             <element signature="docComment;method#Wave#0;class#Wave#0" expanded="false" />
@@ -601,13 +624,13 @@
             <element signature="docComment;method#toShiftedInts#0;class#Wave#0" expanded="false" />
             <element signature="method#toShiftedInts#0;class#Wave#0" expanded="false" />
             <element signature="docComment;method#playWave#0;class#Wave#0" expanded="false" />
+            <element signature="method#playWave#0;class#Wave#0" expanded="false" />
             <element signature="e#21344#22106#0" expanded="true" />
             <element signature="e#22105#22106#0" expanded="true" />
             <element signature="docComment;method#simpleDownSample#0;class#Wave#0" expanded="false" />
             <element signature="method#simpleDownSample#0;class#Wave#0" expanded="false" />
             <element signature="docComment;method#decompress#0;class#Wave#0" expanded="false" />
             <element signature="method#decompress#0;class#Wave#0" expanded="false" />
-            <element signature="e#25072#25125#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -616,9 +639,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2924">
           <caret line="186" column="35" lean-forward="false" selection-start-line="186" selection-start-column="35" selection-end-line="186" selection-end-column="35" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -627,7 +648,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="612">
           <caret line="36" column="37" lean-forward="false" selection-start-line="36" selection-start-column="37" selection-end-line="36" selection-end-column="37" />
-          <folding />
+          <folding>
+            <element signature="method#getDoubleArrayOfCorrectLength#0;class#Operators#0" expanded="false" />
+            <element signature="method#getDoubleArrayTruncated#0;class#Operators#0" expanded="false" />
+            <element signature="method#removeZeroesFromDoubles#0;class#Operators#0" expanded="false" />
+            <element signature="method#addZeroesToDoubles#0;class#Operators#0" expanded="false" />
+            <element signature="method#getAvg#0;class#Operators#0" expanded="false" />
+            <element signature="method#getWaveletFromIndex#0;class#Operators#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -636,6 +664,7 @@
         <state relative-caret-position="6868">
           <caret line="404" column="5" lean-forward="false" selection-start-line="404" selection-start-column="5" selection-end-line="404" selection-end-column="5" />
           <folding>
+            <element signature="docComment;class#Wave#0" expanded="false" />
             <element signature="e#1456#1487#0" expanded="false" />
             <element signature="e#2445#2476#0" expanded="false" />
             <element signature="docComment;method#Wave#0;class#Wave#0" expanded="false" />
@@ -660,13 +689,13 @@
             <element signature="docComment;method#toShiftedInts#0;class#Wave#0" expanded="false" />
             <element signature="method#toShiftedInts#0;class#Wave#0" expanded="false" />
             <element signature="docComment;method#playWave#0;class#Wave#0" expanded="false" />
+            <element signature="method#playWave#0;class#Wave#0" expanded="false" />
             <element signature="e#21344#22106#0" expanded="true" />
             <element signature="e#22105#22106#0" expanded="true" />
             <element signature="docComment;method#simpleDownSample#0;class#Wave#0" expanded="false" />
             <element signature="method#simpleDownSample#0;class#Wave#0" expanded="false" />
             <element signature="docComment;method#decompress#0;class#Wave#0" expanded="false" />
             <element signature="method#decompress#0;class#Wave#0" expanded="false" />
-            <element signature="e#25072#25125#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -683,9 +712,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2703">
           <caret line="159" column="41" lean-forward="false" selection-start-line="159" selection-start-column="41" selection-end-line="159" selection-end-column="41" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -694,7 +721,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="612">
           <caret line="36" column="37" lean-forward="false" selection-start-line="36" selection-start-column="37" selection-end-line="36" selection-end-column="37" />
-          <folding />
+          <folding>
+            <element signature="method#getDoubleArrayOfCorrectLength#0;class#Operators#0" expanded="false" />
+            <element signature="method#getDoubleArrayTruncated#0;class#Operators#0" expanded="false" />
+            <element signature="method#removeZeroesFromDoubles#0;class#Operators#0" expanded="false" />
+            <element signature="method#addZeroesToDoubles#0;class#Operators#0" expanded="false" />
+            <element signature="method#getAvg#0;class#Operators#0" expanded="false" />
+            <element signature="method#getWaveletFromIndex#0;class#Operators#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -703,6 +737,7 @@
         <state relative-caret-position="6868">
           <caret line="404" column="5" lean-forward="false" selection-start-line="404" selection-start-column="5" selection-end-line="404" selection-end-column="5" />
           <folding>
+            <element signature="docComment;class#Wave#0" expanded="false" />
             <element signature="e#1456#1487#0" expanded="false" />
             <element signature="e#2445#2476#0" expanded="false" />
             <element signature="docComment;method#Wave#0;class#Wave#0" expanded="false" />
@@ -727,13 +762,13 @@
             <element signature="docComment;method#toShiftedInts#0;class#Wave#0" expanded="false" />
             <element signature="method#toShiftedInts#0;class#Wave#0" expanded="false" />
             <element signature="docComment;method#playWave#0;class#Wave#0" expanded="false" />
+            <element signature="method#playWave#0;class#Wave#0" expanded="false" />
             <element signature="e#21344#22106#0" expanded="true" />
             <element signature="e#22105#22106#0" expanded="true" />
             <element signature="docComment;method#simpleDownSample#0;class#Wave#0" expanded="false" />
             <element signature="method#simpleDownSample#0;class#Wave#0" expanded="false" />
             <element signature="docComment;method#decompress#0;class#Wave#0" expanded="false" />
             <element signature="method#decompress#0;class#Wave#0" expanded="false" />
-            <element signature="e#25072#25125#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -749,9 +784,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2482">
           <caret line="146" column="55" lean-forward="false" selection-start-line="146" selection-start-column="55" selection-end-line="146" selection-end-column="55" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -761,6 +794,7 @@
         <state relative-caret-position="1003">
           <caret line="59" column="0" lean-forward="false" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
           <folding>
+            <element signature="docComment;class#Wave#0" expanded="false" />
             <element signature="e#1456#1487#0" expanded="false" />
             <element signature="e#2445#2476#0" expanded="false" />
             <element signature="docComment;method#Wave#0;class#Wave#0" expanded="false" />
@@ -785,13 +819,13 @@
             <element signature="docComment;method#toShiftedInts#0;class#Wave#0" expanded="false" />
             <element signature="method#toShiftedInts#0;class#Wave#0" expanded="false" />
             <element signature="docComment;method#playWave#0;class#Wave#0" expanded="false" />
+            <element signature="method#playWave#0;class#Wave#0" expanded="false" />
             <element signature="e#21344#22106#0" expanded="true" />
             <element signature="e#22105#22106#0" expanded="true" />
             <element signature="docComment;method#simpleDownSample#0;class#Wave#0" expanded="false" />
             <element signature="method#simpleDownSample#0;class#Wave#0" expanded="false" />
             <element signature="docComment;method#decompress#0;class#Wave#0" expanded="false" />
             <element signature="method#decompress#0;class#Wave#0" expanded="false" />
-            <element signature="e#25072#25125#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -963,7 +997,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="909">
           <caret line="305" column="0" lean-forward="true" selection-start-line="305" selection-start-column="0" selection-end-line="305" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -971,7 +1004,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-10">
           <caret line="33" column="13" lean-forward="false" selection-start-line="33" selection-start-column="13" selection-end-line="33" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -979,17 +1011,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-918">
           <caret line="37" column="46" lean-forward="false" selection-start-line="37" selection-start-column="5" selection-end-line="37" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="145">
-          <caret line="5" column="17" lean-forward="false" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -997,13 +1018,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="58">
           <caret line="2" column="18" lean-forward="false" selection-start-line="2" selection-start-column="18" selection-end-line="2" selection-end-column="18" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Operators.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="174">
+        <state relative-caret-position="102">
           <caret line="33" column="68" lean-forward="false" selection-start-line="33" selection-start-column="68" selection-end-line="33" selection-end-column="68" />
           <folding>
             <element signature="method#getDoubleArrayOfCorrectLength#0;class#Operators#0" expanded="false" />
@@ -1018,21 +1038,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Frontend.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="848">
-          <caret line="63" column="13" lean-forward="true" selection-start-line="63" selection-start-column="13" selection-end-line="63" selection-end-column="13" />
+        <state relative-caret-position="144">
+          <caret line="34" column="26" lean-forward="true" selection-start-line="34" selection-start-column="26" selection-end-line="34" selection-end-column="26" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#849#850#0" expanded="true" />
-            <element signature="e#902#903#0" expanded="true" />
+            <element signature="e#1068#1069#0" expanded="true" />
+            <element signature="e#1109#1110#0" expanded="true" />
+            <element signature="e#1313#1441#0" expanded="true" />
+            <element signature="e#1440#1441#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-697">
+          <caret line="2" column="17" lean-forward="false" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Wave.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1954">
-          <caret line="762" column="0" lean-forward="false" selection-start-line="762" selection-start-column="0" selection-end-line="762" selection-end-column="0" />
+        <state relative-caret-position="352">
+          <caret line="764" column="0" lean-forward="false" selection-start-line="764" selection-start-column="0" selection-end-line="764" selection-end-column="0" />
           <folding>
+            <element signature="docComment;class#Wave#0" expanded="false" />
             <element signature="e#1456#1487#0" expanded="false" />
             <element signature="e#2445#2476#0" expanded="false" />
             <element signature="docComment;method#Wave#0;class#Wave#0" expanded="false" />
@@ -1057,13 +1088,23 @@
             <element signature="docComment;method#toShiftedInts#0;class#Wave#0" expanded="false" />
             <element signature="method#toShiftedInts#0;class#Wave#0" expanded="false" />
             <element signature="docComment;method#playWave#0;class#Wave#0" expanded="false" />
+            <element signature="method#playWave#0;class#Wave#0" expanded="false" />
             <element signature="e#21344#22106#0" expanded="true" />
             <element signature="e#22105#22106#0" expanded="true" />
             <element signature="docComment;method#simpleDownSample#0;class#Wave#0" expanded="false" />
             <element signature="method#simpleDownSample#0;class#Wave#0" expanded="false" />
             <element signature="docComment;method#decompress#0;class#Wave#0" expanded="false" />
             <element signature="method#decompress#0;class#Wave#0" expanded="false" />
-            <element signature="e#25072#25125#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/WavePlayer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="646">
+          <caret line="38" column="73" lean-forward="false" selection-start-line="38" selection-start-column="73" selection-end-line="38" selection-end-column="73" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

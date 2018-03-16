@@ -669,8 +669,9 @@ public class Wave {
         waveAsBytes = toBytesFromDoubles(waveAsDoubles);
     }
 
-    public void addToWave(String path) throws IOException, UnsupportedAudioFileException {
+    public byte[] addToWave(String path) throws IOException, UnsupportedAudioFileException {
         URL url = null;
+        byte[] resultant = null;
         if (path.contains("zip")) {     //Determine if given path points to a compressed or uncompressed file, and load Wave.
             //<editor-fold desc="Read Wave from compressed ZIP.">
             if (path.contains("http")) {    //Determine if given path is a url, and load Wave.
@@ -759,10 +760,22 @@ public class Wave {
             }
             out.flush();
 
-            byte[] result = out.toByteArray();
+            resultant = out.toByteArray();
 
-            s.write(result, 0, result.length);
+            byte[] temp = new byte[resultant.length + waveAsBytes.length];
+
+            for (int i = 0; i < temp.length; i++) {
+                if (i < waveAsBytes.length) {
+                    temp[i] = waveAsBytes[i];
+                }
+                else {
+                    temp[i] = resultant[i - waveAsBytes.length];
+                }
+            }
+
+            waveAsBytes = temp;
             //</editor-fold>
         }
+        return resultant;
     }
 }
