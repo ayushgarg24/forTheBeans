@@ -457,6 +457,68 @@ public class Wave {
         zos.close();
     }
 
+    public void toZipStream(OutputStream os) throws IOException {
+        ZipOutputStream zos = new ZipOutputStream(os);
+        zos.setMethod(ZipOutputStream.DEFLATED);
+
+        byte[] header = new byte[15];
+
+        header[0] = (byte)toShiftedInts(waveAsDoubles);
+
+        header[1] = (byte) (((int)fileAudioFormat.getSampleRate()) & 0xff);
+        header[2] = (byte) ((((int)fileAudioFormat.getSampleRate()) >> 8) & 0xff);
+        header[3] = (byte) ((((int)fileAudioFormat.getSampleRate()) >> 16) & 0xff);
+        header[4] = (byte) ((((int)fileAudioFormat.getSampleRate()) >> 24) & 0xff);
+
+        header[5] = (byte) fileAudioFormat.getSampleSizeInBits();
+
+        header[6] = (byte) fileAudioFormat.getChannels();
+
+        if (fileAudioFormat.getEncoding().toString().equals("PCM_SIGNED")) {
+            header[7] = 1;
+        }
+        else {
+            header[7] = 0;
+        }
+        if (fileAudioFormat.isBigEndian()) {
+            header[8] = 1;
+        }
+        else {
+            header[8] = 0;
+        }
+
+        header[9] = (byte) tLevel;
+
+        header[10] = (byte) wavelet;
+
+        header[1] = (byte) ((ogLength) & 0xff);
+        header[12] = (byte) (((ogLength) >> 8) & 0xff);
+        header[13] = (byte) (((ogLength) >> 16) & 0xff);
+        header[14] = (byte) (((ogLength) >> 24) & 0xff);
+
+        byte[] bytes = new byte[shiftedInts.length*4];
+
+        for (int i = 0; i < shiftedInts.length; i++) {
+            bytes[((i+1)*4)-4] = (byte)(shiftedInts[i] & 0xff);
+            bytes[((i+1)*4)-3] = (byte)((shiftedInts[i] >> 8) & 0xff);
+            bytes[((i+1)*4)-2] = (byte)((shiftedInts[i] >> 16) & 0xff);
+            bytes[((i+1)*4)-1] = (byte)((shiftedInts[i] >> 24) & 0xff);
+        }
+
+        byte[] newBytes = new byte[bytes.length + header.length];
+        for (int i = 0; i < header.length; i++) {
+            newBytes[i] = header[i];
+        }
+        for (int i = header.length; i < bytes.length - header.length; i++) {
+            newBytes[i] = bytes[i - header.length];
+        }
+
+        ZipEntry entry = new ZipEntry("file");
+        zos.putNextEntry(entry);
+        zos.write(newBytes);
+        zos.close();
+    }
+
     public void toSimpleZip(String path) throws IOException {
         FileOutputStream os = new FileOutputStream(path);
         ZipOutputStream zos = new ZipOutputStream(new BufferedOutputStream(os));
