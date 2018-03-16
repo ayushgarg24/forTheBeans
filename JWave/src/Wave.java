@@ -714,6 +714,38 @@ public class Wave {
     }
 
     /**
+     * Given a threshold level, this method will perform a forward wavelet transform using the Wave's wavelet type.
+     * Thresholding will be applied and resulting array will be stored in waveAsDoubles array.
+     *
+     * @date 3.16.2018 9:50:00
+     * @author Alex Radovan (alexradocole@gmail.com)
+     * @param thresh
+     */
+    public void compress(int thresh) {
+        Transform set = new Transform(new FastWaveletTransform(Operators.getWaveletFromIndex(wavelet)));
+
+        ogLength = waveAsDoubles.length;
+        waveAsDoubles = Operators.getDoubleArrayOfCorrectLength(waveAsDoubles);
+        tLevel = (int) Math.log((double)waveAsDoubles.length);
+        waveAsDoubles = set.forward(waveAsDoubles, tLevel);
+        for (int i = 0; i < waveAsDoubles.length; i++) {
+            if (waveAsDoubles[i] < thresh && waveAsDoubles[i] > -thresh) {
+                waveAsDoubles[i] = 0;
+            }
+            else {
+                if (waveAsDoubles[i] > 0) {
+                    waveAsDoubles[i] = waveAsDoubles[i] - thresh;
+                }
+                else {
+                    waveAsDoubles[i] = waveAsDoubles[i] + thresh;
+                }
+            }
+        }
+
+        waveAsDoubles = Operators.getDoubleArrayTruncated(waveAsDoubles, ogLength);
+    }
+
+    /**
      * Decompresses a Wave object, expanding the Wave using a FWT given by the Wave's wavelet value.
      * The reverse transformation is applied to a length adjusted array created from the Wave's waveAsDoubles array, at a level specified by the Wave's tLevel value.
      * Padding of the array and the subsequent de-padding after transformation is achieved with the use of the ogLength value, present in the ZIP header.
