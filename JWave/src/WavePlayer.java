@@ -3,10 +3,13 @@ import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.SourceDataLine;
 import javax.sound.sampled.UnsupportedAudioFileException;
 import java.io.IOException;
+import java.util.Arrays;
 
 public class WavePlayer {
     protected Wave completeWave;
     protected SourceDataLine sLine;
+    protected int frameLocation;
+    protected int maxFrame;
 
     public WavePlayer() {
 
@@ -22,6 +25,7 @@ public class WavePlayer {
      */
     public void setSource(String path) throws IOException, UnsupportedAudioFileException {
         completeWave = new Wave(path);
+        maxFrame = completeWave.waveAsBytes.length/completeWave.fileAudioFormat.getFrameSize();
     }
 
     public void play() {
@@ -60,5 +64,15 @@ public class WavePlayer {
             sLine.flush();
             sLine.close();
         }
+    }
+
+    public void seek(int fP) {
+        sLine.flush();
+        byte[] b = Arrays.copyOfRange(completeWave.waveAsBytes, fP * completeWave.fileAudioFormat.getFrameSize(), completeWave.waveAsBytes.length);
+        sLine.write(b, 0, b.length);
+    }
+
+    public int getPosition() {
+        return sLine.getFramePosition();
     }
 }

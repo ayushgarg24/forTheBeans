@@ -1,5 +1,7 @@
 import javax.sound.sampled.*;
 import javax.swing.*;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -11,8 +13,18 @@ public class Frontend {
     protected static Wave song;
     protected static boolean playing = false;
     protected static Thread playSong;
-    protected static WavePlayer wp = new WavePlayer();
+    protected static WavePlayer wp;
+    protected static Thread playback;
     public static void main(String[] args) {
+        wp = new WavePlayer();
+        try {
+            wp.setSource("https://storage.googleapis.com/rd-site-resources/wavelets/first20/first20_1.wav");
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (UnsupportedAudioFileException e) {
+            e.printStackTrace();
+        }
+
         JFrame frame = new JFrame();
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.getContentPane().add(createMainPanel(), BorderLayout.CENTER);
@@ -28,6 +40,14 @@ public class Frontend {
 
         JButton b = new JButton("Play");
         JButton stop = new JButton("Stop");
+
+        JSlider s = new JSlider(0, wp.maxFrame);
+       /* s.addChangeListener(new ChangeListener() {
+            @Override
+            public void stateChanged(ChangeEvent e) {
+                wp.seek(s.getValue());
+            }
+        });*/
 
         stop.addActionListener(new ActionListener() {
             @Override
@@ -49,6 +69,13 @@ public class Frontend {
         });
         panel.add(b);
         panel.add(stop);
+        panel.add(s);
+
+        playback = new Thread() {
+            public void run() {
+                s.setValue(wp.getPosition());
+            }
+        };
 
         return panel;
     }
@@ -85,13 +112,7 @@ public class Frontend {
     }
 
     public static void stream() {
-        try {
-            wp.setSource("https://storage.googleapis.com/rd-site-resources/wavelets/first20/first20_1.wav");
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (UnsupportedAudioFileException e) {
-            e.printStackTrace();
-        }
         wp.play();
+        playback.start();
     }
 }
