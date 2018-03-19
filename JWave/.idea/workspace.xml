@@ -3,9 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="b86c335b-4056-462a-8d05-9d33bde99e20" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/out/production/JWave/DesktopPlayer/PlayerPanel$1.class" afterPath="$PROJECT_DIR$/out/production/JWave/DesktopPlayer/PlayerPanel$1.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/JWave/DesktopPlayer/PlayerPanel$2.class" afterPath="$PROJECT_DIR$/out/production/JWave/DesktopPlayer/PlayerPanel$2.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/JWave/DesktopPlayer/PlayerPanel.class" afterPath="$PROJECT_DIR$/out/production/JWave/DesktopPlayer/PlayerPanel.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/JWave/DesktopPlayer/DesktopPlayer.class" afterPath="$PROJECT_DIR$/out/production/JWave/DesktopPlayer/DesktopPlayer.class" />
+      <change beforePath="$PROJECT_DIR$/src/DesktopPlayer/DesktopPlayer.java" afterPath="$PROJECT_DIR$/src/DesktopPlayer/DesktopPlayer.java" />
       <change beforePath="$PROJECT_DIR$/src/DesktopPlayer/PlayerPanel.java" afterPath="$PROJECT_DIR$/src/DesktopPlayer/PlayerPanel.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -17,24 +16,12 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Frontend.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Frontend.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="663">
-              <caret line="39" column="0" lean-forward="false" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
+    <leaf>
       <file leaf-file-name="DesktopPlayer.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/DesktopPlayer/DesktopPlayer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="9" column="62" lean-forward="false" selection-start-line="9" selection-start-column="62" selection-end-line="9" selection-end-column="62" />
+            <state relative-caret-position="725">
+              <caret line="25" column="9" lean-forward="true" selection-start-line="25" selection-start-column="9" selection-end-line="25" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -42,99 +29,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PlayerPanel.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="PlayerPanel.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/DesktopPlayer/PlayerPanel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1071">
-              <caret line="63" column="53" lean-forward="false" selection-start-line="63" selection-start-column="53" selection-end-line="63" selection-end-column="53" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="290">
+              <caret line="58" column="25" lean-forward="false" selection-start-line="58" selection-start-column="25" selection-end-line="58" selection-end-column="25" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PlayerPanel.form" pinned="false" current-in-tab="false">
+      <file leaf-file-name="PlayerPanel.form" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/DesktopPlayer/PlayerPanel.form">
           <provider selected="true" editor-type-id="ui-designer">
             <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="player2.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/player2.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="21" column="40" lean-forward="false" selection-start-line="21" selection-start-column="40" selection-end-line="21" selection-end-column="40" />
-              <folding>
-                <element signature="e#364#365#0" expanded="true" />
-                <element signature="e#392#393#0" expanded="true" />
-                <element signature="e#756#757#0" expanded="true" />
-                <element signature="e#822#823#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Wave.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Wave.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="38" column="27" lean-forward="false" selection-start-line="38" selection-start-column="27" selection-end-line="38" selection-end-column="27" />
-              <folding>
-                <element signature="docComment;class#Wave#0" expanded="false" />
-                <element signature="e#1456#1487#0" expanded="false" />
-                <element signature="e#2445#2476#0" expanded="false" />
-                <element signature="docComment;method#Wave#0;class#Wave#0" expanded="false" />
-                <element signature="method#Wave#0;class#Wave#0" expanded="false" />
-                <element signature="e#6650#6703#0" expanded="false" />
-                <element signature="e#9367#9415#0" expanded="false" />
-                <element signature="docComment;method#Wave#1;class#Wave#0" expanded="false" />
-                <element signature="method#Wave#1;class#Wave#0" expanded="false" />
-                <element signature="method#readWaveAsDoubles#0;class#Wave#0" expanded="false" />
-                <element signature="method#readWaveAsBytes#0;class#Wave#0" expanded="false" />
-                <element signature="method#readWaveAsShorts#0;class#Wave#0" expanded="false" />
-                <element signature="method#shortsFromDoubles#0;class#Wave#0" expanded="false" />
-                <element signature="method#bytesFromShorts#0;class#Wave#0" expanded="false" />
-                <element signature="docComment;method#toFile#0;class#Wave#0" expanded="false" />
-                <element signature="method#toFile#0;class#Wave#0" expanded="false" />
-                <element signature="docComment;method#toBinaryFile#0;class#Wave#0" expanded="false" />
-                <element signature="method#toBinaryFile#0;class#Wave#0" expanded="false" />
-                <element signature="method#toZipFile#0;class#Wave#0" expanded="false" />
-                <element signature="method#simpleDownSample#0;class#Wave#0" expanded="false" />
-                <element signature="docComment;method#decompress#0;class#Wave#0" expanded="false" />
-                <element signature="method#decompress#0;class#Wave#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Operators.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Operators.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="33" column="68" lean-forward="false" selection-start-line="33" selection-start-column="68" selection-end-line="33" selection-end-column="68" />
-              <folding>
-                <element signature="method#getDoubleArrayOfCorrectLength#0;class#Operators#0" expanded="false" />
-                <element signature="method#getDoubleArrayTruncated#0;class#Operators#0" expanded="false" />
-                <element signature="method#removeZeroesFromDoubles#0;class#Operators#0" expanded="false" />
-                <element signature="method#addZeroesToDoubles#0;class#Operators#0" expanded="false" />
-                <element signature="method#getAvg#0;class#Operators#0" expanded="false" />
-                <element signature="method#getWaveletFromIndex#0;class#Operators#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="WavePlayer.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/WavePlayer.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="544">
-              <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
           </provider>
         </entry>
       </file>
@@ -171,8 +79,8 @@
         <option value="$PROJECT_DIR$/src/WavePlayer.java" />
         <option value="$PROJECT_DIR$/src/Frontend.java" />
         <option value="$PROJECT_DIR$/src/DesktopPlayer.java" />
-        <option value="$PROJECT_DIR$/src/DesktopPlayer/DesktopPlayer.java" />
         <option value="$PROJECT_DIR$/src/DesktopPlayer/PlayerPanel.form" />
+        <option value="$PROJECT_DIR$/src/DesktopPlayer/DesktopPlayer.java" />
         <option value="$PROJECT_DIR$/src/DesktopPlayer/PlayerPanel.java" />
       </list>
     </option>
@@ -210,19 +118,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="AndroidView" />
-      <pane id="PackagesPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="JWave" type="58d84e3e:PackageViewProjectNode" />
-              <item name="JWave" type="616d4139:PackageViewModuleNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -246,11 +141,31 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="DesktopPlayer" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="JWave" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JWave" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="DesktopPlayer" type="462c0819:PsiDirectoryNode" />
+              <item name="PlayerPanel" type="e9f4de52:FormNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="AndroidView" />
       <pane id="Scratches" />
+      <pane id="PackagesPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="JWave" type="58d84e3e:PackageViewProjectNode" />
+              <item name="JWave" type="616d4139:PackageViewModuleNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -475,6 +390,8 @@
       <workItem from="1521216448395" duration="17511000" />
       <workItem from="1521419862260" duration="3025000" />
       <workItem from="1521442243654" duration="2744000" />
+      <workItem from="1521477933057" duration="1208000" />
+      <workItem from="1521491548552" duration="2269000" />
     </task>
     <task id="LOCAL-00001" summary="Workspace">
       <created>1521045701876</created>
@@ -508,10 +425,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="85781000" />
+    <option name="totallyTimeSpent" value="89258000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-12" y="-12" width="3224" height="1754" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -531,7 +448,7 @@
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32629356" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3258786" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290735" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.209375" sideWeight="0.49448818" order="0" side_tool="false" content_ui="combo" />
@@ -621,406 +538,9 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Wave.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6868">
-          <caret line="404" column="5" lean-forward="false" selection-start-line="404" selection-start-column="5" selection-end-line="404" selection-end-column="5" />
-          <folding>
-            <element signature="docComment;class#Wave#0" expanded="false" />
-            <element signature="e#1456#1487#0" expanded="false" />
-            <element signature="e#2445#2476#0" expanded="false" />
-            <element signature="docComment;method#Wave#0;class#Wave#0" expanded="false" />
-            <element signature="method#Wave#0;class#Wave#0" expanded="false" />
-            <element signature="e#6650#6703#0" expanded="false" />
-            <element signature="e#9367#9415#0" expanded="false" />
-            <element signature="docComment;method#Wave#1;class#Wave#0" expanded="false" />
-            <element signature="method#Wave#1;class#Wave#0" expanded="false" />
-            <element signature="method#readWaveAsDoubles#0;class#Wave#0" expanded="false" />
-            <element signature="method#readWaveAsBytes#0;class#Wave#0" expanded="false" />
-            <element signature="method#readWaveAsShorts#0;class#Wave#0" expanded="false" />
-            <element signature="method#shortsFromDoubles#0;class#Wave#0" expanded="false" />
-            <element signature="method#bytesFromShorts#0;class#Wave#0" expanded="false" />
-            <element signature="docComment;method#toFile#0;class#Wave#0" expanded="false" />
-            <element signature="method#toFile#0;class#Wave#0" expanded="false" />
-            <element signature="docComment;method#toBinaryFile#0;class#Wave#0" expanded="false" />
-            <element signature="method#toBinaryFile#0;class#Wave#0" expanded="false" />
-            <element signature="method#toZipFile#0;class#Wave#0" expanded="false" />
-            <element signature="method#simpleDownSample#0;class#Wave#0" expanded="false" />
-            <element signature="docComment;method#decompress#0;class#Wave#0" expanded="false" />
-            <element signature="method#decompress#0;class#Wave#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="81" lean-forward="false" selection-start-line="10" selection-start-column="81" selection-end-line="10" selection-end-column="81" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2703">
-          <caret line="159" column="41" lean-forward="false" selection-start-line="159" selection-start-column="41" selection-end-line="159" selection-end-column="41" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Frontend.java" />
-    <entry file="file://$PROJECT_DIR$/src/Operators.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="36" column="37" lean-forward="false" selection-start-line="36" selection-start-column="37" selection-end-line="36" selection-end-column="37" />
-          <folding>
-            <element signature="method#getDoubleArrayOfCorrectLength#0;class#Operators#0" expanded="false" />
-            <element signature="method#getDoubleArrayTruncated#0;class#Operators#0" expanded="false" />
-            <element signature="method#removeZeroesFromDoubles#0;class#Operators#0" expanded="false" />
-            <element signature="method#addZeroesToDoubles#0;class#Operators#0" expanded="false" />
-            <element signature="method#getAvg#0;class#Operators#0" expanded="false" />
-            <element signature="method#getWaveletFromIndex#0;class#Operators#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Wave.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6868">
-          <caret line="404" column="5" lean-forward="false" selection-start-line="404" selection-start-column="5" selection-end-line="404" selection-end-column="5" />
-          <folding>
-            <element signature="docComment;class#Wave#0" expanded="false" />
-            <element signature="e#1456#1487#0" expanded="false" />
-            <element signature="e#2445#2476#0" expanded="false" />
-            <element signature="docComment;method#Wave#0;class#Wave#0" expanded="false" />
-            <element signature="method#Wave#0;class#Wave#0" expanded="false" />
-            <element signature="e#6650#6703#0" expanded="false" />
-            <element signature="e#9367#9415#0" expanded="false" />
-            <element signature="docComment;method#Wave#1;class#Wave#0" expanded="false" />
-            <element signature="method#Wave#1;class#Wave#0" expanded="false" />
-            <element signature="method#readWaveAsDoubles#0;class#Wave#0" expanded="false" />
-            <element signature="method#readWaveAsBytes#0;class#Wave#0" expanded="false" />
-            <element signature="method#readWaveAsShorts#0;class#Wave#0" expanded="false" />
-            <element signature="method#shortsFromDoubles#0;class#Wave#0" expanded="false" />
-            <element signature="method#bytesFromShorts#0;class#Wave#0" expanded="false" />
-            <element signature="docComment;method#toFile#0;class#Wave#0" expanded="false" />
-            <element signature="method#toFile#0;class#Wave#0" expanded="false" />
-            <element signature="docComment;method#toBinaryFile#0;class#Wave#0" expanded="false" />
-            <element signature="method#toBinaryFile#0;class#Wave#0" expanded="false" />
-            <element signature="method#toZipFile#0;class#Wave#0" expanded="false" />
-            <element signature="method#simpleDownSample#0;class#Wave#0" expanded="false" />
-            <element signature="docComment;method#decompress#0;class#Wave#0" expanded="false" />
-            <element signature="method#decompress#0;class#Wave#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/lib/jwave-1.0.3-sources.jar!/jwave/transforms/DiscreteFourierTransform.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="782">
-          <caret line="46" column="13" lean-forward="false" selection-start-line="46" selection-start-column="13" selection-end-line="46" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2482">
-          <caret line="146" column="55" lean-forward="false" selection-start-line="146" selection-start-column="55" selection-end-line="146" selection-end-column="55" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Frontend.java" />
-    <entry file="file://$PROJECT_DIR$/src/Wave.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1003">
-          <caret line="59" column="0" lean-forward="false" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
-          <folding>
-            <element signature="docComment;class#Wave#0" expanded="false" />
-            <element signature="e#1456#1487#0" expanded="false" />
-            <element signature="e#2445#2476#0" expanded="false" />
-            <element signature="docComment;method#Wave#0;class#Wave#0" expanded="false" />
-            <element signature="method#Wave#0;class#Wave#0" expanded="false" />
-            <element signature="e#6650#6703#0" expanded="false" />
-            <element signature="e#9367#9415#0" expanded="false" />
-            <element signature="docComment;method#Wave#1;class#Wave#0" expanded="false" />
-            <element signature="method#Wave#1;class#Wave#0" expanded="false" />
-            <element signature="method#readWaveAsDoubles#0;class#Wave#0" expanded="false" />
-            <element signature="method#readWaveAsBytes#0;class#Wave#0" expanded="false" />
-            <element signature="method#readWaveAsShorts#0;class#Wave#0" expanded="false" />
-            <element signature="method#shortsFromDoubles#0;class#Wave#0" expanded="false" />
-            <element signature="method#bytesFromShorts#0;class#Wave#0" expanded="false" />
-            <element signature="docComment;method#toFile#0;class#Wave#0" expanded="false" />
-            <element signature="method#toFile#0;class#Wave#0" expanded="false" />
-            <element signature="docComment;method#toBinaryFile#0;class#Wave#0" expanded="false" />
-            <element signature="method#toBinaryFile#0;class#Wave#0" expanded="false" />
-            <element signature="method#toZipFile#0;class#Wave#0" expanded="false" />
-            <element signature="method#simpleDownSample#0;class#Wave#0" expanded="false" />
-            <element signature="docComment;method#decompress#0;class#Wave#0" expanded="false" />
-            <element signature="method#decompress#0;class#Wave#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_161/src.zip!/javax/sound/sampled/AudioFormat.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="202">
-          <caret line="242" column="11" lean-forward="false" selection-start-line="242" selection-start-column="11" selection-end-line="242" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/lib/jwave-1.0.3-sources.jar!/jwave/transforms/WaveletTransform.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1275">
-          <caret line="33" column="22" lean-forward="false" selection-start-line="33" selection-start-column="22" selection-end-line="33" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/lib/jwave-1.0.3-sources.jar!/jwave/transforms/BasicTransform.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="202">
-          <caret line="41" column="22" lean-forward="false" selection-start-line="41" selection-start-column="22" selection-end-line="41" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/lib/jwave-1.0.3-sources.jar!/jwave/compressions/Compressor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="202">
-          <caret line="35" column="22" lean-forward="false" selection-start-line="35" selection-start-column="22" selection-end-line="35" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/lib/jwave-1.0.3-sources.jar!/jwave/TransformBuilder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="26" column="13" lean-forward="false" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/lib/jwave-1.0.3-sources.jar!/jwave/transforms/wavelets/biorthogonal/BiOrthogonal68.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="32" column="13" lean-forward="false" selection-start-line="32" selection-start-column="13" selection-end-line="32" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/lib/jwave-1.0.3-sources.jar!/jwave/transforms/wavelets/other/Battle23.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="202">
-          <caret line="35" column="25" lean-forward="false" selection-start-line="35" selection-start-column="25" selection-end-line="35" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/lib/jwave-1.0.3-sources.jar!/jwave/transforms/wavelets/other/CDF97.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="33" column="13" lean-forward="false" selection-start-line="33" selection-start-column="13" selection-end-line="33" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/lib/jwave-1.0.3-sources.jar!/jwave/transforms/wavelets/other/CDF53.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="202">
-          <caret line="34" column="13" lean-forward="false" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/lib/jwave-1.0.3-sources.jar!/jwave/transforms/wavelets/other/DiscreteMayer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="202">
-          <caret line="34" column="13" lean-forward="false" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/lib/jwave-1.0.3-sources.jar!/jwave/transforms/wavelets/WaveletBuilder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="85" column="13" lean-forward="false" selection-start-line="85" selection-start-column="13" selection-end-line="85" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/lib/jwave-1.0.3-sources.jar!/jwave/transforms/wavelets/symlets/Symlet2.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="202">
-          <caret line="34" column="13" lean-forward="false" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/lib/jwave-1.0.3-sources.jar!/jwave/tools/MathToolKit.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-4142">
-          <caret line="31" column="13" lean-forward="false" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/lib/jwave-1.0.3-sources.jar!/jwave/datatypes/blocks/Block.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="202">
-          <caret line="37" column="22" lean-forward="false" selection-start-line="37" selection-start-column="22" selection-end-line="37" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/lib/jwave-1.0.3-sources.jar!/jwave/datatypes/natives/Complex.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="33" column="13" lean-forward="false" selection-start-line="33" selection-start-column="13" selection-end-line="33" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/lib/jwave-1.0.3-sources.jar!/jwave/datatypes/Super.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="202">
-          <caret line="35" column="22" lean-forward="false" selection-start-line="35" selection-start-column="22" selection-end-line="35" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/lib/jwave-1.0.3-sources.jar!/jwave/datatypes/lines/Line.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1190">
-          <caret line="35" column="22" lean-forward="false" selection-start-line="35" selection-start-column="22" selection-end-line="35" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/lib/jwave-1.0.3-sources.jar!/jwave/compressions/CompressorPeaksAverage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1813">
-          <caret line="34" column="13" lean-forward="false" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/lib/jwave-1.0.3-sources.jar!/jwave/transforms/DiscreteFourierTransform.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="46" column="13" lean-forward="false" selection-start-line="46" selection-start-column="13" selection-end-line="46" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/lib/jwave-1.0.3-sources.jar!/jwave/JWave.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-283">
-          <caret line="58" column="16" lean-forward="true" selection-start-line="58" selection-start-column="16" selection-end-line="58" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/lib/jwave-1.0.3-sources.jar!/jwave/Transform.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3045">
-          <caret line="70" column="0" lean-forward="true" selection-start-line="70" selection-start-column="0" selection-end-line="70" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/files/InvalidParamException.java" />
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_161/src.zip!/java/io/File.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1955">
-          <caret line="148" column="13" lean-forward="false" selection-start-line="148" selection-start-column="13" selection-end-line="148" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="290">
-          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/lib/jwave-1.0.3-sources.jar!/jwave/transforms/wavelets/Wavelet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="909">
-          <caret line="305" column="0" lean-forward="true" selection-start-line="305" selection-start-column="0" selection-end-line="305" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/lib/jwave-1.0.3-sources.jar!/jwave/transforms/wavelets/haar/Haar1.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-10">
-          <caret line="33" column="13" lean-forward="false" selection-start-line="33" selection-start-column="13" selection-end-line="33" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/lib/jwave-1.0.3-sources.jar!/jwave/transforms/wavelets/daubechies/Daubechies20.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-918">
-          <caret line="37" column="46" lean-forward="false" selection-start-line="37" selection-start-column="5" selection-end-line="37" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/files/R8B.java" />
-    <entry file="file://$PROJECT_DIR$/src/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="589">
-          <caret line="173" column="39" lean-forward="false" selection-start-line="173" selection-start-column="39" selection-end-line="173" selection-end-column="39" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Operators.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="33" column="68" lean-forward="false" selection-start-line="33" selection-start-column="68" selection-end-line="33" selection-end-column="68" />
-          <folding>
-            <element signature="method#getDoubleArrayOfCorrectLength#0;class#Operators#0" expanded="false" />
-            <element signature="method#getDoubleArrayTruncated#0;class#Operators#0" expanded="false" />
-            <element signature="method#removeZeroesFromDoubles#0;class#Operators#0" expanded="false" />
-            <element signature="method#addZeroesToDoubles#0;class#Operators#0" expanded="false" />
-            <element signature="method#getAvg#0;class#Operators#0" expanded="false" />
-            <element signature="method#getWaveletFromIndex#0;class#Operators#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/player.fxml" />
-    <entry file="file://$PROJECT_DIR$/src/Demo.java" />
-    <entry file="file://$PROJECT_DIR$/src/player2.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="21" column="40" lean-forward="false" selection-start-line="21" selection-start-column="40" selection-end-line="21" selection-end-column="40" />
-          <folding>
-            <element signature="e#364#365#0" expanded="true" />
-            <element signature="e#392#393#0" expanded="true" />
-            <element signature="e#756#757#0" expanded="true" />
-            <element signature="e#822#823#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/WavePlayer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/DPlayer.form" />
-    <entry file="file://$PROJECT_DIR$/src/DPlayer.java" />
-    <entry file="file://$PROJECT_DIR$/src/DesktopPlayer/PlayerPanel.form">
-      <provider selected="true" editor-type-id="ui-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/DesktopPlayer/DesktopPlayer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="9" column="62" lean-forward="false" selection-start-line="9" selection-start-column="62" selection-end-line="9" selection-end-column="62" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Frontend.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="663">
+        <state relative-caret-position="1131">
           <caret line="39" column="0" lean-forward="false" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1028,45 +548,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Wave.java">
+    <entry file="file://$PROJECT_DIR$/src/DesktopPlayer/DesktopPlayer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="38" column="27" lean-forward="false" selection-start-line="38" selection-start-column="27" selection-end-line="38" selection-end-column="27" />
+        <state relative-caret-position="725">
+          <caret line="25" column="9" lean-forward="true" selection-start-line="25" selection-start-column="9" selection-end-line="25" selection-end-column="9" />
           <folding>
-            <element signature="docComment;class#Wave#0" expanded="false" />
-            <element signature="e#1456#1487#0" expanded="false" />
-            <element signature="e#2445#2476#0" expanded="false" />
-            <element signature="docComment;method#Wave#0;class#Wave#0" expanded="false" />
-            <element signature="method#Wave#0;class#Wave#0" expanded="false" />
-            <element signature="e#6650#6703#0" expanded="false" />
-            <element signature="e#9367#9415#0" expanded="false" />
-            <element signature="docComment;method#Wave#1;class#Wave#0" expanded="false" />
-            <element signature="method#Wave#1;class#Wave#0" expanded="false" />
-            <element signature="method#readWaveAsDoubles#0;class#Wave#0" expanded="false" />
-            <element signature="method#readWaveAsBytes#0;class#Wave#0" expanded="false" />
-            <element signature="method#readWaveAsShorts#0;class#Wave#0" expanded="false" />
-            <element signature="method#shortsFromDoubles#0;class#Wave#0" expanded="false" />
-            <element signature="method#bytesFromShorts#0;class#Wave#0" expanded="false" />
-            <element signature="docComment;method#toFile#0;class#Wave#0" expanded="false" />
-            <element signature="method#toFile#0;class#Wave#0" expanded="false" />
-            <element signature="docComment;method#toBinaryFile#0;class#Wave#0" expanded="false" />
-            <element signature="method#toBinaryFile#0;class#Wave#0" expanded="false" />
-            <element signature="method#toZipFile#0;class#Wave#0" expanded="false" />
-            <element signature="method#simpleDownSample#0;class#Wave#0" expanded="false" />
-            <element signature="docComment;method#decompress#0;class#Wave#0" expanded="false" />
-            <element signature="method#decompress#0;class#Wave#0" expanded="false" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/DesktopPlayer/PlayerPanel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1071">
-          <caret line="63" column="53" lean-forward="false" selection-start-line="63" selection-start-column="53" selection-end-line="63" selection-end-column="53" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="290">
+          <caret line="58" column="25" lean-forward="false" selection-start-line="58" selection-start-column="25" selection-end-line="58" selection-end-column="25" />
+          <folding />
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DesktopPlayer/PlayerPanel.form">
+      <provider selected="true" editor-type-id="ui-designer">
+        <state />
       </provider>
     </entry>
   </component>

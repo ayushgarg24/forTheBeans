@@ -57,7 +57,6 @@ public class PlayerPanel {
                         e1.printStackTrace();
                     }
                     try {
-                        String charset = "UTF-8";
                         URLConnection c = url.openConnection();
                         c.setDoOutput(true);
                         c.setRequestProperty("Content-Type", "audio/wav");
