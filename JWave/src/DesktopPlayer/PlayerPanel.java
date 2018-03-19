@@ -1,5 +1,6 @@
 package DesktopPlayer;
 
+import com.sun.xml.internal.ws.transport.http.client.HttpClientTransport;
 import org.apache.commons.io.IOUtils;
 
 import javax.swing.*;
@@ -10,6 +11,8 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 
 public class PlayerPanel {
     private JButton playButton;
@@ -54,13 +57,20 @@ public class PlayerPanel {
                         e1.printStackTrace();
                     }
                     try {
-                        HttpURLConnection c = (HttpURLConnection) url.openConnection();
+                        String charset = "UTF-8";
+                        URLConnection c = url.openConnection();
                         c.setDoOutput(true);
-                        c.setRequestMethod("POST");
+                        c.setRequestProperty("Content-Type", "audio/wav");
+                        //c.setRequestMethod("POST");
+                        OutputStream out = c.getOutputStream();
+                        out.write(IOUtils.toByteArray(fis));
+                        //Files.copy(Paths.get(file.toURI()), c.getOutputStream());
                         //IOUtils.copy(fis, c.getOutputStream());
-                        OutputStreamWriter w = new OutputStreamWriter(c.getOutputStream());
-                        w.write("This is a test!");
-                        w.close();
+                        //OutputStreamWriter w = new OutputStreamWriter(c.getOutputStream());
+                        //w.write("This is a test!");
+                        //w.close();
+                        InputStream response = c.getInputStream();
+                        System.out.println(response);
                     } catch (IOException e1) {
                         e1.printStackTrace();
                     }
