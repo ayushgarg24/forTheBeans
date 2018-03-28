@@ -3,6 +3,7 @@ package DesktopPlayer;
 import com.sun.xml.internal.ws.transport.http.client.HttpClientTransport;
 import org.apache.commons.io.IOUtils;
 
+import javax.sound.sampled.UnsupportedAudioFileException;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -22,6 +23,8 @@ public class PlayerPanel {
     private JButton chooseButton;
     private JButton uploadButton;
     private JTextField textField1;
+    private JTabbedPane tabbedPane1;
+    private JProgressBar progressBar1;
     protected JFileChooser fileChooser;
     protected File file;
 
@@ -57,6 +60,9 @@ public class PlayerPanel {
                         e1.printStackTrace();
                     }
                     try {
+                        if (file.length() > 30000000) {
+
+                        }
                         URLConnection c = url.openConnection();
                         c.setDoOutput(true);
                         c.setRequestProperty("Content-Type", "audio/wav");
@@ -74,6 +80,23 @@ public class PlayerPanel {
                         e1.printStackTrace();
                     }
 
+                }
+            }
+        });
+        playButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    Wave w = new Wave("src/files/outputs/ran.zip");
+                    System.out.println("Wave In");
+                    w.decompress();
+                    System.out.println("Wave Decomp");
+                    w.streamWave();
+                    System.out.println("Wave Stream");
+                } catch (IOException e1) {
+                    e1.printStackTrace();
+                } catch (UnsupportedAudioFileException e1) {
+                    e1.printStackTrace();
                 }
             }
         });
