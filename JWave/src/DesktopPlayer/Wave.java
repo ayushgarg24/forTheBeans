@@ -40,6 +40,8 @@ public class Wave {
     protected int ogLength;
 
     protected SourceDataLine s;
+
+    protected FloatControl f;
     //</editor-fold>
 
     //<editor-fold desc="Obsolete">
@@ -638,20 +640,7 @@ public class Wave {
             e.printStackTrace();
         }
         c.start();
-        CountDownLatch syncLatch = new CountDownLatch(1);
-        c.addLineListener(new LineListener() {
-            @Override
-            public void update(LineEvent event) {
-                if (event.getType() == LineEvent.Type.STOP) {
-                    syncLatch.countDown();
-                }
-            }
-        });
-        try {
-            syncLatch.await();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+        f = (FloatControl) c.getControl(FloatControl.Type.MASTER_GAIN);
     }
 
     public void streamWave() {

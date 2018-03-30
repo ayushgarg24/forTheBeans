@@ -637,20 +637,6 @@ public class Wave {
             e.printStackTrace();
         }
         c.start();
-        CountDownLatch syncLatch = new CountDownLatch(1);
-        c.addLineListener(new LineListener() {
-            @Override
-            public void update(LineEvent event) {
-                if (event.getType() == LineEvent.Type.STOP) {
-                    syncLatch.countDown();
-                }
-            }
-        });
-        try {
-            syncLatch.await();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
     }
 
     public void streamWave() {

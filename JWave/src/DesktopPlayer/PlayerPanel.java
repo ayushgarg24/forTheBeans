@@ -5,6 +5,8 @@ import org.apache.commons.io.IOUtils;
 
 import javax.sound.sampled.UnsupportedAudioFileException;
 import javax.swing.*;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.*;
@@ -24,7 +26,8 @@ public class PlayerPanel {
     private JButton uploadButton;
     private JTextField textField1;
     private JTabbedPane tabbedPane1;
-    private JProgressBar progressBar1;
+    private JTextField linkTextField;
+    private JComboBox filePicker;
     protected JFileChooser fileChooser;
     protected File file;
 
@@ -86,13 +89,30 @@ public class PlayerPanel {
         playButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                String name = filePicker.getSelectedItem().toString() + ".zip";
                 try {
+<<<<<<< HEAD
                     Wave w = new Wave("https://storage.googleapis.com/audiowavelet.appspot.com/the_file.zip");
+=======
+                    Wave w = new Wave("https://storage.googleapis.com/rd-site-resources/wavelets/" + name);
+>>>>>>> c49603fe299114a99ac1ef80185156a747e8e766
                     System.out.println("Wave In");
                     w.decompress();
                     System.out.println("Wave Decomp");
                     w.playWave();
                     System.out.println("Wave Stream");
+                    slider1.setMaximum(6);
+                    slider1.setMinimum(-80);
+                    slider1.setValue((int)w.f.getValue());
+                    slider1.addChangeListener(new ChangeListener() {
+                        @Override
+                        public void stateChanged(ChangeEvent e) {
+                            int v = slider1.getValue();
+                            float dB = (float) v/100*46 - 40;
+                            w.f.setValue(v);
+                            System.out.println(v);
+                        }
+                    });
                 } catch (IOException e1) {
                     e1.printStackTrace();
                 } catch (UnsupportedAudioFileException e1) {
