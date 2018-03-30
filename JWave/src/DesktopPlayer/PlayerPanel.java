@@ -87,11 +87,11 @@ public class PlayerPanel {
             @Override
             public void actionPerformed(ActionEvent e) {
                 try {
-                    Wave w = new Wave("src/files/outputs/ran.zip");
+                    Wave w = new Wave("https://storage.googleapis.com/audiowavelet.appspot.com/the_file.zip");
                     System.out.println("Wave In");
                     w.decompress();
                     System.out.println("Wave Decomp");
-                    w.streamWave();
+                    w.playWave();
                     System.out.println("Wave Stream");
                 } catch (IOException e1) {
                     e1.printStackTrace();

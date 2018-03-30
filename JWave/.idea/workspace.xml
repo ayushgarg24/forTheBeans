@@ -2,14 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b86c335b-4056-462a-8d05-9d33bde99e20" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/DesktopPlayer/Operators.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/DesktopPlayer/Wave.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/DesktopPlayer/timeSlider.java" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/out/production/JWave/DesktopPlayer/PlayerPanel$1.class" afterPath="$PROJECT_DIR$/out/production/JWave/DesktopPlayer/PlayerPanel$1.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/JWave/DesktopPlayer/PlayerPanel$2.class" afterPath="$PROJECT_DIR$/out/production/JWave/DesktopPlayer/PlayerPanel$2.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/JWave/DesktopPlayer/PlayerPanel.class" afterPath="$PROJECT_DIR$/out/production/JWave/DesktopPlayer/PlayerPanel.class" />
-      <change beforePath="$PROJECT_DIR$/src/DesktopPlayer/PlayerPanel.form" afterPath="$PROJECT_DIR$/src/DesktopPlayer/PlayerPanel.form" />
+      <change beforePath="$PROJECT_DIR$/out/production/JWave/DesktopPlayer/PlayerPanel$3.class" afterPath="$PROJECT_DIR$/out/production/JWave/DesktopPlayer/PlayerPanel$3.class" />
       <change beforePath="$PROJECT_DIR$/src/DesktopPlayer/PlayerPanel.java" afterPath="$PROJECT_DIR$/src/DesktopPlayer/PlayerPanel.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -25,8 +19,8 @@
       <file leaf-file-name="DesktopPlayer.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/DesktopPlayer/DesktopPlayer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="174">
-              <caret line="6" column="17" lean-forward="false" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
+            <state relative-caret-position="145">
+              <caret line="11" column="17" lean-forward="false" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -35,7 +29,7 @@
       <file leaf-file-name="timeSlider.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/DesktopPlayer/timeSlider.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="174">
+            <state relative-caret-position="145">
               <caret line="6" column="16" lean-forward="false" selection-start-line="6" selection-start-column="16" selection-end-line="6" selection-end-column="16" />
               <folding>
                 <element signature="e#113#114#0" expanded="true" />
@@ -48,7 +42,7 @@
       <file leaf-file-name="Wave.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Wave.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-7900">
+            <state relative-caret-position="12354">
               <caret line="569" column="47" lean-forward="false" selection-start-line="569" selection-start-column="43" selection-end-line="569" selection-end-column="47" />
               <folding>
                 <element signature="n#!!doc;n#waveAsDoubles#0;n#Wave#0" expanded="false" />
@@ -63,12 +57,22 @@
       <file leaf-file-name="PlayerPanel.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/DesktopPlayer/PlayerPanel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="902">
-              <caret line="94" column="0" lean-forward="false" selection-start-line="94" selection-start-column="0" selection-end-line="94" selection-end-column="0" />
+            <state relative-caret-position="758">
+              <caret line="89" column="39" lean-forward="false" selection-start-line="89" selection-start-column="39" selection-end-line="89" selection-end-column="39" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="class#1087:1476" expanded="false" />
-                <element signature="class#1522:3327" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Frontend.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Frontend.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1131">
+              <caret line="39" column="0" lean-forward="false" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -77,8 +81,8 @@
       <file leaf-file-name="Wave.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/DesktopPlayer/Wave.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="526">
-              <caret line="235" column="91" lean-forward="true" selection-start-line="235" selection-start-column="91" selection-end-line="235" selection-end-column="91" />
+            <state relative-caret-position="6525">
+              <caret line="235" column="91" lean-forward="false" selection-start-line="235" selection-start-column="91" selection-end-line="235" selection-end-column="91" />
               <folding />
             </state>
           </provider>
@@ -172,25 +176,32 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="JWave" type="58d84e3e:PackageViewProjectNode" />
-              <item name="JWave" type="616d4139:PackageViewModuleNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="AndroidView" />
       <pane id="Scratches" />
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="JWave" type="b2602c69:ProjectViewProjectNode" />
               <item name="JWave" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="JWave" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JWave" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="JWave" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JWave" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+              <item name="jwave-1.0.3-sources.jar" type="ab9368bb:PsiFileNode" />
+            </path>
+            <path>
+              <item name="JWave" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JWave" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+              <item name="jwave-1.0.3-sources.jar" type="ab9368bb:PsiFileNode" />
+              <item name="jwave" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="JWave" type="b2602c69:ProjectViewProjectNode" />
@@ -202,6 +213,17 @@
               <item name="JWave" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="DesktopPlayer" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="PackagesPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="JWave" type="58d84e3e:PackageViewProjectNode" />
+              <item name="JWave" type="616d4139:PackageViewModuleNode" />
             </path>
           </expand>
           <select />
@@ -442,6 +464,9 @@
       <workItem from="1521582494960" duration="1041000" />
       <workItem from="1521646056593" duration="3712000" />
       <workItem from="1522187805379" duration="1001000" />
+      <workItem from="1522199284773" duration="2711000" />
+      <workItem from="1522253322187" duration="2648000" />
+      <workItem from="1522425845496" duration="19000" />
     </task>
     <task id="LOCAL-00001" summary="Workspace">
       <created>1521045701876</created>
@@ -475,40 +500,40 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="95012000" />
+    <option name="totallyTimeSpent" value="100390000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-12" y="-12" width="3224" height="1754" extended-state="6" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="R Graphics" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.209375" sideWeight="0.5090218" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32715654" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32779554" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290735" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3258786" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3252376" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.209375" sideWeight="0.49097815" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.209375" sideWeight="0.4798722" order="0" side_tool="false" content_ui="combo" />
       <window_info id="R Packages" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="R Graphics" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Google Cloud Storage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.209375" sideWeight="0.5201278" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32715654" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32779554" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
@@ -577,12 +602,6 @@
           <properties />
           <option name="timeStamp" value="35" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/DesktopPlayer/PlayerPanel.java</url>
-          <line>89</line>
-          <properties />
-          <option name="timeStamp" value="38" />
-        </line-breakpoint>
       </breakpoints>
       <option name="time" value="39" />
     </breakpoint-manager>
@@ -593,6 +612,191 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/DesktopPlayer/DesktopPlayer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="145">
+          <caret line="11" column="17" lean-forward="false" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DesktopPlayer/timeSlider.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="174">
+          <caret line="6" column="16" lean-forward="false" selection-start-line="6" selection-start-column="16" selection-end-line="6" selection-end-column="16" />
+          <folding>
+            <element signature="e#113#114#0" expanded="true" />
+            <element signature="e#136#137#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Wave.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="16501">
+          <caret line="569" column="47" lean-forward="false" selection-start-line="569" selection-start-column="43" selection-end-line="569" selection-end-column="47" />
+          <folding>
+            <element signature="n#!!doc;n#waveAsDoubles#0;n#Wave#0" expanded="false" />
+            <element signature="e#1456#1487#0" expanded="false" />
+            <element signature="e#2445#2476#0" expanded="false" />
+            <element signature="docComment;method#Wave#0;class#Wave#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Frontend.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1131">
+          <caret line="39" column="0" lean-forward="false" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DesktopPlayer/Wave.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6815">
+          <caret line="235" column="91" lean-forward="false" selection-start-line="235" selection-start-column="91" selection-end-line="235" selection-end-column="91" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DesktopPlayer/PlayerPanel.form">
+      <provider selected="true" editor-type-id="ui-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DesktopPlayer/PlayerPanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2581">
+          <caret line="89" column="39" lean-forward="false" selection-start-line="89" selection-start-column="39" selection-end-line="89" selection-end-column="39" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DesktopPlayer/DesktopPlayer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="145">
+          <caret line="11" column="17" lean-forward="false" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DesktopPlayer/timeSlider.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="174">
+          <caret line="6" column="16" lean-forward="false" selection-start-line="6" selection-start-column="16" selection-end-line="6" selection-end-column="16" />
+          <folding>
+            <element signature="e#113#114#0" expanded="true" />
+            <element signature="e#136#137#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Wave.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="16501">
+          <caret line="569" column="47" lean-forward="false" selection-start-line="569" selection-start-column="43" selection-end-line="569" selection-end-column="47" />
+          <folding>
+            <element signature="n#!!doc;n#waveAsDoubles#0;n#Wave#0" expanded="false" />
+            <element signature="e#1456#1487#0" expanded="false" />
+            <element signature="e#2445#2476#0" expanded="false" />
+            <element signature="docComment;method#Wave#0;class#Wave#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Frontend.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1131">
+          <caret line="39" column="0" lean-forward="false" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DesktopPlayer/Wave.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6815">
+          <caret line="235" column="91" lean-forward="false" selection-start-line="235" selection-start-column="91" selection-end-line="235" selection-end-column="91" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DesktopPlayer/PlayerPanel.form">
+      <provider selected="true" editor-type-id="ui-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DesktopPlayer/PlayerPanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2204">
+          <caret line="89" column="39" lean-forward="false" selection-start-line="89" selection-start-column="39" selection-end-line="89" selection-end-column="67" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DesktopPlayer/DesktopPlayer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="6" column="17" lean-forward="false" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DesktopPlayer/timeSlider.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="6" column="16" lean-forward="false" selection-start-line="6" selection-start-column="16" selection-end-line="6" selection-end-column="16" />
+          <folding>
+            <element signature="e#113#114#0" expanded="true" />
+            <element signature="e#136#137#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Wave.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="7242">
+          <caret line="569" column="47" lean-forward="false" selection-start-line="569" selection-start-column="43" selection-end-line="569" selection-end-column="47" />
+          <folding>
+            <element signature="n#!!doc;n#waveAsDoubles#0;n#Wave#0" expanded="false" />
+            <element signature="e#1456#1487#0" expanded="false" />
+            <element signature="e#2445#2476#0" expanded="false" />
+            <element signature="docComment;method#Wave#0;class#Wave#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DesktopPlayer/Wave.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3825">
+          <caret line="235" column="91" lean-forward="true" selection-start-line="235" selection-start-column="91" selection-end-line="235" selection-end-column="91" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DesktopPlayer/PlayerPanel.form">
+      <provider selected="true" editor-type-id="ui-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DesktopPlayer/PlayerPanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1462">
+          <caret line="86" column="0" lean-forward="false" selection-start-line="86" selection-start-column="0" selection-end-line="86" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/DesktopPlayer/DesktopPlayer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="551">
@@ -607,8 +811,6 @@
           <caret line="62" column="0" lean-forward="false" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="class#1087:1476" expanded="false" />
-            <element signature="class#1522:3327" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -643,8 +845,6 @@
           <caret line="59" column="25" lean-forward="false" selection-start-line="59" selection-start-column="25" selection-end-line="59" selection-end-column="25" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="class#1087:1476" expanded="false" />
-            <element signature="class#1522:3327" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -668,8 +868,6 @@
           <caret line="58" column="25" lean-forward="false" selection-start-line="58" selection-start-column="25" selection-end-line="58" selection-end-column="25" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="class#1087:1476" expanded="false" />
-            <element signature="class#1522:3327" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -677,16 +875,6 @@
     <entry file="file://$PROJECT_DIR$/src/DesktopPlayer/PlayerPanel.form">
       <provider selected="true" editor-type-id="ui-designer">
         <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Frontend.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1131">
-          <caret line="39" column="0" lean-forward="false" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/DesktopPlayer/PlayerPanel.form">
@@ -704,23 +892,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/DesktopPlayer/Wave.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="526">
-          <caret line="235" column="91" lean-forward="true" selection-start-line="235" selection-start-column="91" selection-end-line="235" selection-end-column="91" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/DesktopPlayer/DesktopPlayer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="174">
-          <caret line="6" column="17" lean-forward="false" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
+        <state relative-caret-position="6525">
+          <caret line="235" column="91" lean-forward="false" selection-start-line="235" selection-start-column="91" selection-end-line="235" selection-end-column="91" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/DesktopPlayer/timeSlider.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="174">
+        <state relative-caret-position="145">
           <caret line="6" column="16" lean-forward="false" selection-start-line="6" selection-start-column="16" selection-end-line="6" selection-end-column="16" />
           <folding>
             <element signature="e#113#114#0" expanded="true" />
@@ -731,7 +911,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Wave.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-7900">
+        <state relative-caret-position="12354">
           <caret line="569" column="47" lean-forward="false" selection-start-line="569" selection-start-column="43" selection-end-line="569" selection-end-column="47" />
           <folding>
             <element signature="n#!!doc;n#waveAsDoubles#0;n#Wave#0" expanded="false" />
@@ -742,14 +922,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/DesktopPlayer/PlayerPanel.java">
+    <entry file="file://$PROJECT_DIR$/src/Frontend.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="902">
-          <caret line="94" column="0" lean-forward="false" selection-start-line="94" selection-start-column="0" selection-end-line="94" selection-end-column="0" />
+        <state relative-caret-position="1131">
+          <caret line="39" column="0" lean-forward="false" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="class#1087:1476" expanded="false" />
-            <element signature="class#1522:3327" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DesktopPlayer/DesktopPlayer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="145">
+          <caret line="11" column="17" lean-forward="false" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DesktopPlayer/PlayerPanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="758">
+          <caret line="89" column="39" lean-forward="false" selection-start-line="89" selection-start-column="39" selection-end-line="89" selection-end-column="39" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
