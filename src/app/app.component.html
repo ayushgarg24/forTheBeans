@@ -1,0 +1,56 @@
+<div class="container">
+  <div class="navbar navbar-default">
+    <div class="navbar-header">
+      <a class="navbar-brand"> Audio Player </a>
+    </div>
+  </div>
+  <app-file-upload></app-file-upload>
+  <audio controls>
+    <source src = "https://storage.googleapis.com/audiowavelet.appspot.com/first20.wav" type = "audio/wav">
+  </audio>
+  <app-playback></app-playback>
+</div>
+
+  <!--
+  <div class="row">
+    <div class="col-md-3">
+      <h3>Select files</h3>
+      <input type="file" ng2FileSelect [uploader]="uploader" />
+      <p> {{uploader.progress}} </p>
+    </div>
+    <div class="col-md-9" style="margin-bottom: 40px">
+      <table class="table">
+        <tbody>
+        <tr *ngFor="let item of uploader.queue">
+          <p> {{item}} </p>
+          <td><strong>{{ item?.file?.name }}</strong></td>
+          <td *ngIf="uploader.isHTML5" nowrap>{{ item?.file?.size/1024/1024 | number:'.2' }} MB</td>
+          <td *ngIf="uploader.isHTML5">
+            <div class="progress" style="margin-bottom: 0;">
+              <div class="progress-bar" role="progressbar" [ngStyle]="{ 'width': item.progress + '%' }"></div>
+            </div>
+          </td>
+          <td class="text-center">
+            <span *ngIf="item.isSuccess"><i class="glyphicon glyphicon-ok"></i></span>
+            <span *ngIf="item.isCancel"><i class="glyphicon glyphicon-ban-circle"></i></span>
+            <span *ngIf="item.isError"><i class="glyphicon glyphicon-remove"></i></span>
+          </td>
+          <td nowrap>
+            <button type="button" class="btn btn-success btn-xs"
+                    (click)="item.upload()" [disabled]="item.isReady || item.isUploading || item.isSuccess">
+              <span class="glyphicon glyphicon-upload"></span> Upload
+            </button>
+            <button type="button" class="btn btn-warning btn-xs"
+                    (click)="item.cancel()" [disabled]="!item.isUploading">
+              <span class="glyphicon glyphicon-ban-circle"></span> Cancel
+            </button>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+   <audio controls>
+    <source src = "https://storage.googleapis.com/audiowavelet.appspot.com/pipe.wav" type = "audio/wav">
+  </audio>
+</div> -->
