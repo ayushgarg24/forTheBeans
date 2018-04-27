@@ -77,7 +77,7 @@ public void doPost (
         response = new Exception();
     } else{
         try {
-            saveFile(req);
+            response = saveFile(req);
         } catch (FileUploadException e) {
             response = e;
         }
@@ -86,7 +86,7 @@ public void doPost (
     doResponse(req,rsp,response);
 }
 
-public void saveFile(HttpServletRequest req) throws IOException, FileUploadException, ServletException {
+public String saveFile(HttpServletRequest req) throws IOException, FileUploadException, ServletException {
     DiskFileItemFactory factory = new DiskFileItemFactory();
     ServletContext servletContext = this.getServletConfig().getServletContext();
     File repository = (File) servletContext.getAttribute("javax.servlet.context.tempdir");
@@ -109,10 +109,12 @@ public void saveFile(HttpServletRequest req) throws IOException, FileUploadExcep
     copy(items.get(0).getInputStream(), Channels.newOutputStream(outputChannel));
 
     try {
-        doTransform("https://storage.googleapis.com/audiowavelet.appspot.com/pipe.wav");
+    	//get file name and add to end of zipURL
+        String zipURL = doTransform("https://storage.googleapis.com/audiowavelet.appspot.com/pipe.wav");
     } catch (UnsupportedAudioFileException e) {
         e.printStackTrace();
     }
+    return zipURL;
 
 }
 
@@ -139,22 +141,26 @@ private void copy(InputStream input, OutputStream output) throws IOException {
     }
 }
 
-public void doTransform(String path) throws IOException, UnsupportedAudioFileException {
+public String doTransform(String path) throws IOException, UnsupportedAudioFileException {
     Wave wave = new Wave(path);
 
     wave.wavelet = 39;
 
     wave.compress(1500);
-
+    String transformedFileName = path.substring(57, path.indexOf(".wav")) + ".zip"
     // wave.decompress();
 
+
     GcsFileOptions instance = GcsFileOptions.getDefaultInstance();
-    GcsFilename fileName = new GcsFilename("audiowavelet.appspot.com","the_file.zip");
+    GcsFilename fileName = new GcsFilename("audiowavelet.appspot.com",transformedFileName);
 
     GcsOutputChannel outputChannel = gcsService.createOrReplace(fileName,instance);
 
    ZipOutputStream the_bot = wave.toZipStream(Channels.newOutputStream(outputChannel));
    int test = 0;
+   String zipURL = "https://storage.googleapis.com/audiowavelet.appspot.com/" + transformedFileName;
+   return ZipURL;
+
 }
 
 
