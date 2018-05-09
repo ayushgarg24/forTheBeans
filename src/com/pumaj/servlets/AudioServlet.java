@@ -79,7 +79,7 @@ public void doPost (
     } else{
         try {
             response = saveFile(req);
-        } catch (FileUploadException e) {
+        } catch (FileUploadException | IOException e) {
             response = e;
         }
     }
@@ -112,44 +112,17 @@ public String saveFile(HttpServletRequest req) throws IOException, FileUploadExc
     }
 
     //Trying something new to get file name
-    String body = null;
-    StringBuilder stringBuilder = new StringBuilder();
-    BufferedReader bufferedReader = null;
 
-    try {
-        InputStream inputStream = items.get(0).getInputStream();
-        if (inputStream != null) {
-            bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
-            char[] charBuffer = new char[128];
-            int bytesRead = -1;
-            while ((bytesRead = bufferedReader.read(charBuffer)) > 0) {
-                stringBuilder.append(charBuffer, 0, bytesRead);
-            }
-        } else {
-            stringBuilder.append("");
-        }
-    } catch (IOException ex) {
-        throw ex;
-    } finally {
-        if (bufferedReader != null) {
-            try {
-                bufferedReader.close();
-            } catch (IOException ex) {
-                throw ex;
-            }
-        }
-    }
+    InputStream inputStream = items.get(0).getInputStream();
+      try
+      {
+         parseFile(inputStream);
+      }
+      catch (IOException e)
+      {
+         e.printStackTrace();
+      }
 
-    body = stringBuilder.toString();
-
-
-
-    GcsFileOptions instance = GcsFileOptions.getDefaultInstance();
-    //GcsFilename fileName = getFileName(req);
-
-    GcsFilename fileName = new GcsFilename("audiowavelet.appspot.com", "first.wav");
-    GcsOutputChannel outputChannel = gcsService.createOrReplace(fileName, instance);
-    copy(items.get(0).getInputStream(), Channels.newOutputStream(outputChannel));
 
     try {
     	//get file name and add to end of zipURL
@@ -161,21 +134,39 @@ public String saveFile(HttpServletRequest req) throws IOException, FileUploadExc
     return "";
 
 }
+private void parseFile(InputStream inputStream) throws IOException
+{
+   String body = null;
+   StringBuilder stringBuilder = new StringBuilder();
+   BufferedReader bufferedReader = null;
+   if (inputStream != null) {
+         bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
+         char[] charBuffer = new char[128];
+            int bytesRead = -1;
+            while ((bytesRead = bufferedReader.read(charBuffer)) > 0) {
+                stringBuilder.append(charBuffer, 0, bytesRead);
+            }
+        } else {
+            stringBuilder.append("");
+        }
 
-private GcsFilename getFileName(HttpServletRequest req) throws IOException {
 
 
+    body = stringBuilder.toString();
+    int filenameIndex = body.indexOf("filename");
+    String testString = body.substring(filenameIndex,body.length()-1);
+    int quoteIndex = testString.indexOf(".wav");
+    String the_name = testString.substring(10,quoteIndex+4);
 
-    /*BufferedReader requestReader = req.getReader();
-    StringBuilder buffer = new StringBuilder();
-    String line;
-    while ((line = requestReader.readLine()) != null) {
-        buffer.append(line);
-    }
-    String data = buffer.toString(); */
 
-    return new GcsFilename("audiowavelet.appspot.com", "");
+    GcsFileOptions instance = GcsFileOptions.getDefaultInstance();
+    //GcsFilename fileName = getFileName(req);
+
+    GcsFilename fileName = new GcsFilename("audiowavelet.appspot.com", the_name);
+    GcsOutputChannel outputChannel = gcsService.createOrReplace(fileName, instance);
+    copy(inputStream, Channels.newOutputStream(outputChannel));
 }
+
 
 private void copy(InputStream input, OutputStream output) throws IOException {
     try {
