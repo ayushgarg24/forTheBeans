@@ -41,6 +41,7 @@ import org.apache.commons.fileupload.FileItem;
 import org.apache.commons.fileupload.FileUploadException;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
+import org.apache.commons.io.IOUtils;
 
 import static java.lang.Boolean.TRUE;
 
@@ -87,6 +88,14 @@ public void doPost (
 }
 
 public String saveFile(HttpServletRequest req) throws IOException, FileUploadException, ServletException {
+    /*String test = IOUtils.toString(req.getReader());
+    int filenameIndex = test.indexOf("filename");
+    String testString = test.substring(filenameIndex,test.length()-1);
+    int quoteIndex = testString.indexOf(".wav");
+    String the_name = testString.substring(10,quoteIndex+4);
+
+    HttpServletRequest other_req = req; */
+
     DiskFileItemFactory factory = new DiskFileItemFactory();
     ServletContext servletContext = this.getServletConfig().getServletContext();
     File repository = (File) servletContext.getAttribute("javax.servlet.context.tempdir");
@@ -102,29 +111,70 @@ public String saveFile(HttpServletRequest req) throws IOException, FileUploadExc
         throw new ServletException("There is not one file");
     }
 
+    //Trying something new to get file name
+    String body = null;
+    StringBuilder stringBuilder = new StringBuilder();
+    BufferedReader bufferedReader = null;
+
+    try {
+        InputStream inputStream = items.get(0).getInputStream();
+        if (inputStream != null) {
+            bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
+            char[] charBuffer = new char[128];
+            int bytesRead = -1;
+            while ((bytesRead = bufferedReader.read(charBuffer)) > 0) {
+                stringBuilder.append(charBuffer, 0, bytesRead);
+            }
+        } else {
+            stringBuilder.append("");
+        }
+    } catch (IOException ex) {
+        throw ex;
+    } finally {
+        if (bufferedReader != null) {
+            try {
+                bufferedReader.close();
+            } catch (IOException ex) {
+                throw ex;
+            }
+        }
+    }
+
+    body = stringBuilder.toString();
+
+
+
     GcsFileOptions instance = GcsFileOptions.getDefaultInstance();
-    // GcsFilename fileName = getFileName(req);
-    GcsFilename fileName = new GcsFilename("audiowavelet.appspot.com","first.wav");
+    //GcsFilename fileName = getFileName(req);
+
+    GcsFilename fileName = new GcsFilename("audiowavelet.appspot.com", "first.wav");
     GcsOutputChannel outputChannel = gcsService.createOrReplace(fileName, instance);
     copy(items.get(0).getInputStream(), Channels.newOutputStream(outputChannel));
 
     try {
     	//get file name and add to end of zipURL
         String zipURL = doTransform("https://storage.googleapis.com/audiowavelet.appspot.com/pipe.wav");
+        return zipURL;
     } catch (UnsupportedAudioFileException e) {
         e.printStackTrace();
     }
-    return zipURL;
+    return "";
 
 }
 
-private GcsFilename getFileName(HttpServletRequest req) {
-    String[] splits = req.getRequestURI().split("/", 4);
-    if (!splits[0].equals("") || !splits[1].equals("gcs")) {
-        throw new IllegalArgumentException("The URL is not formed as expected. " +
-                "Expecting /gcs/<bucket>/<object>");
+private GcsFilename getFileName(HttpServletRequest req) throws IOException {
+
+
+
+    /*BufferedReader requestReader = req.getReader();
+    StringBuilder buffer = new StringBuilder();
+    String line;
+    while ((line = requestReader.readLine()) != null) {
+        buffer.append(line);
     }
-    return new GcsFilename(splits[2], splits[3]);
+    String data = buffer.toString(); */
+
+    return new GcsFilename("audiowavelet.appspot.com", "");
 }
 
 private void copy(InputStream input, OutputStream output) throws IOException {
@@ -147,7 +197,7 @@ public String doTransform(String path) throws IOException, UnsupportedAudioFileE
     wave.wavelet = 39;
 
     wave.compress(1500);
-    String transformedFileName = path.substring(57, path.indexOf(".wav")) + ".zip"
+    String transformedFileName = path.substring(56, path.indexOf(".wav")) + ".zip";
     // wave.decompress();
 
 
@@ -159,7 +209,7 @@ public String doTransform(String path) throws IOException, UnsupportedAudioFileE
    ZipOutputStream the_bot = wave.toZipStream(Channels.newOutputStream(outputChannel));
    int test = 0;
    String zipURL = "https://storage.googleapis.com/audiowavelet.appspot.com/" + transformedFileName;
-   return ZipURL;
+   return zipURL;
 
 }
 
